@@ -1713,7 +1713,7 @@ const WhatsappChat = () => {
     // Load Google Maps script if not already loaded
     if (!window.google) {
       const script = document.createElement('script');
-      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB7DDN_gUp2zyrlElXtYpjTEQobYiUB9Lg&callback=initMap&libraries=places&v=weekly';
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY || ''}&callback=initMap&libraries=places&v=weekly`;
       script.async = true;
       script.defer = true;
       window.initMap = initMap;
