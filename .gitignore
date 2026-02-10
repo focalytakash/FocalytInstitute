@@ -1,0 +1,82 @@
+# Dependencies
+node_modules/
+**/node_modules/
+**/node_modules/.cache/
+/.pnp
+.pnp.js
+
+# Cache
+.cache/
+**/.cache/
+**/dist
+frontend/node_modules/.cache/
+frontend/src/Pages/Candidate/Profile/CandidateProfile copy.jsx
+frontend/node_modules/.cache/default-development/
+backend/node_modules/.cache/
+backend/node_modules/.cache/default-development/
+backend/node_modules/
+backend/focalyt-new-key.json
+frontend/node_modules/
+/frontend/src/Pages/App/College/Login/CollegeLogin copy.jsx
+/frontend/src/Component/Layouts/App/College/ProjectManagement/Student copy 2.jsx
+# Production
+/build
+/dist
+frontend/build/
+frontend/src/Pages/App/Candidate/CandidateProfile/CandidateNewProfile copy.jsx
+frontend/src/Pages/App/College/Course/Registrations copy.jsx
+frontend/src/Pages/App/College/Settings/AccessManagement copy.jsx
+frontend/src/Pages/App/College/MyFollowupB2B/MyFollowupB2B copy.jsx
+
+frontend/src/Pages/App/College/Course/Registrations copy.jsx
+frontend/src/Pages/App/College/Course/Registrations copy 2.jsx
+# Misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env
+frontend/src/Pages/Front/Courses/Course.jsx
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+node_modules/
+node_modules/
+*.log
+.cache/
+*.pack
+node_modules/
+frontend/.env
+frontend/.env
+
+/frontend/src/Pages/App/Candidate/Courses/SearchCourseDetail.jsx.txt
+/frontend/src/Pages/App/Candidate/Profile/CandidateProfile_video-copy.jsx
+/frontend/src/Component/Layouts/Front/FrontHeader/FrontHeader copy.jsx
+/frontend/src/Component/Layouts/Front/FrontHeader/FrontHeader copy.css
+/frontend/src/Pages/Front/HomePage/HomePage copy.css
+/frontend/package.json
+/frontend/package-lock.json
+# /frontend/src/Component/Layouts/Front
+# /frontend/src/Pages/Front
+/frontend/src/Pages/App/Trainer/Vertical/Vertical.jsx
+/frontend/src/Pages/App/Trainer/Project/Project.jsx
+/frontend/src/Pages/App/Trainer/Dashboard/Dashboard copy.jsx
+
+/frontend/src/Pages/App/College/Course/text.jsx
+# /frontend/src/Pages/App/College/Course/AdmissionPost.jsx
+# /frontend/src/Pages/App/College/Course/kycManagement.jsx
+# /frontend/src/Pages/App/College
+/frontend/src/Pages/App/College/Course/AdmissionList copy.jsx
+/frontend/src/Pages/App/College/Whatapp/WhatappWithWebSocket copy.jsx
+/frontend/src/Pages/App/Trainer/CourseManagement/AddCourseContent copy.jsx
+/frontend/src/Pages/App/Trainer/Assignment/Assignment copy.jsx
+/frontend/src/Pages/App/College/Placements/Placements copy.jsx
+/frontend/src/Pages/App/College/Placements/Placements copy 2.jsx
+/frontend/src/Pages/App/College/Profile/Profile copy.jsx
+/frontend/src/Pages/App/Candidate/Earning/CoinsPage copy.jsx
+/frontend/src/Pages/App/College/UploadCandidates/UploadCandidates copy.jsx
+/frontend/src/Pages/App/College/Placements/DashboardPlacements copy.jsx
+/frontend/src/Pages/Front/Jobs/Jobs copy.jsx
+/frontend/src/Pages/App/College/Placements/DashboardPlacements.jsx
