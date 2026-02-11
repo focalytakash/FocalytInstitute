@@ -14,7 +14,7 @@ import HomePage from '../src/Pages/Front/HomePage/HomePage';
 // import About from './Pages/Front/About/About';
 import About from './Pages/Front/About/About';
 import Labs from "./Pages/Front/Labs/Labs";
-import Course from './Pages/Front/Courses/Course';
+// import Course from './Pages/Front/Courses/Course';
 import Jobs from './Pages/Front/Jobs/Jobs';
 import JobDetails from './Pages/Front/Jobs/JobDetails';
 import Contact from './Pages/Front/Contact/Contact';
@@ -71,8 +71,8 @@ import CollegeRegister from './Pages/App/College/Register/CollegeRegister';
 import Dashboard from './Pages/App/College/Dashboard/Dashboard';
 import DashboardB2B from './Pages/App/College/B2B/DashboardB2B';
 import B2BFollowUp from './Pages/App/College/B2B/B2BFollowUp';
-import DashboardPlacements from './Pages/App/College/Placements/DashboardPlacements';
-import Placements from './Pages/App/College/Placements/Placements';
+// import DashboardPlacements from './Pages/App/College/Placements/DashboardPlacements';
+// import Placements from './Pages/App/College/Placements/Placements';
 import PlacementFollowUp from './Pages/App/College/Placements/PlacementFollowUp';
 import StatusPlacements from './Pages/App/College/Status/Placements';
 import Profile from './Pages/App/College/Profile/Profile';
@@ -191,7 +191,7 @@ const Layout = () => {
         <Route exact path="/candidate-review" element={<CandidateReview />} />
         {/* <Route exact path="/about_us" element={<About />} /> */}
         <Route exact path="/labs" element={<Labs />} />
-        <Route exact path="/courses" element={<Course />} />
+        {/* <Route exact path="/courses" element={<Course />} /> */}
         <Route exact path="/joblisting" element={<Jobs />} />
         <Route exact path="/jobdetailsmore/:jobId" element={<JobDetails />} />
         <Route exact path="/contact" element={<Contact />} />
@@ -215,10 +215,10 @@ const Layout = () => {
         {/* CollegeLayout will wrap only protected pages */}
         <Route path="/institute" element={<CollegeLayout  />}>
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="dashboardplacements" element={<DashboardPlacements />} />
+          {/* <Route path="dashboardplacements" element={<DashboardPlacements />} /> */}
           <Route path="dashboardb2b" element={<DashboardB2B />} />
           <Route path="b2bfollowup" element={<B2BFollowUp />} />
-          <Route path="placements" element={<Placements />} />
+          {/* <Route path="placements" element={<Placements />} /> */}
           <Route path="placementfollowup" element={<PlacementFollowUp />} />
           <Route path="statusplacements" element={<StatusPlacements />} />
           <Route path="myprofile" element={<Profile/>}/>

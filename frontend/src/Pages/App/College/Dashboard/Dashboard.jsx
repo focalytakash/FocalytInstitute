@@ -2300,7 +2300,7 @@ const LeadAnalyticsDashboard = () => {
                 {useCustomDate && startDate && endDate && ` • Date Range: ${new Date(startDate).toLocaleDateString('en-IN')} to ${new Date(endDate).toLocaleDateString('en-IN')}`}
               </small>
               <button
-                className="btn btn-sm btn-outline-secondary"
+                className="btn btn-lr btn-outline-secondary"
                 onClick={() => {
                   const dates = getInitialDates();
                   setSelectedCenter('all');
@@ -2384,7 +2384,7 @@ const LeadAnalyticsDashboard = () => {
               <div className="card shadow-sm h-100">
                 <div className="card-body">
                   <div className="d-flex justify-content-between align-items-center">
-                    <div>
+                    <div className="admission_tred">
                       <p className="text-muted small mb-1">Admissions</p>
                       <p className="h3 fw-bold text-success mb-0">
                         {filteredData.filter(l => l.admissionDone).length}
@@ -2590,7 +2590,7 @@ const LeadAnalyticsDashboard = () => {
             <div className="col-lg-6">
               <div className="card shadow-sm h-100">
                 <div className="card-body">
-                  <h3 className="h5 fw-semibold mb-4 d-flex align-items-center gap-2">
+                  <h3 className="h5 fw-semibold mb-5 d-flex align-items-center gap-2 , con-vs-drop">
                     <Target className="text-success" size={20} />
                     Conversion vs Dropout Rates
                   </h3>
@@ -2601,7 +2601,7 @@ const LeadAnalyticsDashboard = () => {
                       <YAxis />
                       <Tooltip formatter={(value) => `${value}%`} />
                       <Legend />
-                      <Bar dataKey="conversionRate" fill="#10b981" name="Conversion Rate" />
+                      <Bar className='conversion-rate-bar' dataKey="conversionRate" fill="#10b981" name="Conversion Rate" />
                       <Bar dataKey="dropoutRate" fill="#ef4444" name="Dropout Rate" />
                     </BarChart>
                   </ResponsiveContainer>
@@ -2970,13 +2970,13 @@ const LeadAnalyticsDashboard = () => {
           {/* ====== NEW: Course-Counsellor Status Table ====== */}
           <div className="card shadow-sm mb-4">
             <div className="card-body">
-              <div className="d-flex justify-content-between align-items-center mb-4">
+              <div className="d-flex justify-content-between align-items-center mb-4 card-flex">
                 <h2 className="h5 fw-semibold mb-0">Course-Counsellor Status Table</h2>
 
                 {/* Date Filter Controls */}
-                <div className="d-flex gap-2 align-items-center">
+                <div className="d-flex gap-2 align-items-center car-elements">
                   <button
-                    className="btn btn-outline-primary btn-sm d-flex align-items-center gap-1"
+                    className="btn btn-outline-primary btn-sm d-flex align-items-center gap-1 card-select-date"
                     onClick={() => setShowCounsellorDatePicker(true)}
                     disabled={counsellorStatusLoading}
                   >
@@ -2987,14 +2987,14 @@ const LeadAnalyticsDashboard = () => {
                     }
                   </button>
                   <button
-                    className={`btn btn-sm ${showAllTime ? 'btn-success' : 'btn-outline-success'}`}
+                    className={`btn btn-sm ${showAllTime ? 'btn-success' : 'btn-outline-success'} card-select-date`}
                     onClick={showAllTimeData}
                     disabled={counsellorStatusLoading}
                   >
                     All Time
                   </button>
                   <button
-                    className="btn btn-outline-secondary btn-sm"
+                    className="btn btn-outline-secondary btn-sm card-select-date"
                     onClick={clearCounsellorStatusDateFilter}
                     disabled={counsellorStatusLoading}
                   >
@@ -3004,7 +3004,7 @@ const LeadAnalyticsDashboard = () => {
                   {/* Download Button */}
                   <div className="position-relative">
                     <button
-                      className="btn btn-outline-info btn-sm d-flex align-items-center gap-1"
+                      className="btn btn-outline-info btn-sm d-flex align-items-center gap-1 card-select-date"
                       type="button"
                       onClick={() => {
                         console.log('Download button clicked, current state:', showDownloadDropdown);
@@ -3116,7 +3116,7 @@ const LeadAnalyticsDashboard = () => {
             <div className="row mb-4 ">
 
 
-              <div className="col-6 border-right">
+              <div className="col-md-6 col-12 border-right ">
 
                 <div className="row">
                   <div className="col-12">
@@ -3125,7 +3125,7 @@ const LeadAnalyticsDashboard = () => {
                 </div>
 
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-6 col preVarification">
                     <div className="card bg-primary text-white">
                       <div className="card-body">
                         <h5 className="card-title">Total Pre Verified</h5>
@@ -3133,7 +3133,7 @@ const LeadAnalyticsDashboard = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 preVarification">
                     <div className="card bg-success text-white">
                       <div className="card-body">
                         <h5 className="card-title">Total Pre Unverified</h5>
@@ -3143,9 +3143,9 @@ const LeadAnalyticsDashboard = () => {
                   </div>
                   <div className="col-10">
                     <div className="row justify-content-center">
-                      <div className="col-md-12">
+                          <div className="card-body preVarification">
+                      <div className="col-md-12 ">
                         <div className="card">
-                          <div className="card-body">
                             <h5 className="card-title">Verified vs Unverified</h5>
                             {loading ? (
                               <div className="text-center py-4">
@@ -3753,7 +3753,7 @@ const LeadAnalyticsDashboard = () => {
                   </div>
                   <div className="d-flex align-items-center gap-2">
                     <button
-                      className="btn btn-sm btn-outline-danger"
+                      className="btn btn-lr btn-outline-danger"
                       onClick={clearAllFilters}
                     >
                       <i className="fas fa-times-circle me-1"></i>
@@ -4401,6 +4401,58 @@ height:100%!important;
    
             `
         }
+
+      </style>
+
+      <style>{
+        `
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+
+.preVarification{
+padding-bottom:20px
+}
+  
+  .car-elements{
+  overflow: scroll;
+          width: 100%;
+  }
+  .card-select-date{
+ white-space: nowrap;
+        font-size: 11px;
+  }
+  
+  .card-flex {
+    flex-direction: column;
+  }
+
+  .react-date-picker__inputGroup {
+    box-sizing: border-box;
+  }
+
+  .con-vs-drop {
+    margin-bottom: 20px;
+  }
+
+  .recharts-legend-wrapper {
+    margin-bottom: 0 !important;
+  }
+
+  .recharts-legend-item-text {
+    margin-right: 54px !important; /* mobile spacing */
+  }
+
+  /* FIXED selector (was invalid before) */
+  .btn.btn-sm.btn-outline-danger {
+    font-size: 9px !important;
+  }
+}
+   
+
+        `
+      }
+
 
       </style>
     </div>
