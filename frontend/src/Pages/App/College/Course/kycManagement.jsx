@@ -3276,7 +3276,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                           {ekycFilters.map((filter, index) => (
                             <div key={filter._id} className="position-relative d-inline-block me-2">
                               <button
-                                className={`btn btn-sm ${activeCrmFilter === index ? 'btn-primary' : 'btn-outline-secondary'} position-relative`}
+                                className={`btn btn-sm ${activeCrmFilter === index ? 'btn-primary' : 'btn-outline-secondary'} position-relative penddingBtn`}
                                 onClick={() => handleCrmFilterClick(filter, index)}
                               >
                                 <i className={`fas ${filter._id === 'pendingEkyc' ? 'fa-clock' : filter._id === 'doneEkyc' ? 'fa-check-circle' : 'fa-list'} me-1`}></i>
@@ -3468,7 +3468,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                       </div>
                       <div className="d-flex align-items-center gap-2">
                         <button
-                          className="btn btn-sm btn-outline-danger"
+                          className="btn btn-sm btn-outline-danger CButtton"
                           onClick={clearAllFilters}
                         >
                           <i className="fas fa-times-circle me-1"></i>
@@ -3488,8 +3488,8 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                     <div className="row g-4">
                       {/* Course Type Filter */}
                       <div className="col-md-3">
-                        <label className="form-label small fw-bold text-dark">
-                          <i className="fas fa-graduation-cap me-1 text-success"></i>
+                        <label className="form-label small fw-bold text-dark CourseType">
+                          <i className="fas fa-graduation-cap me-1 text-success CourseType"></i>
                           Course Type
                         </label>
                         <div className="position-relative">
@@ -3589,7 +3589,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                         </label>
                         <div className="card border-0 bg-light p-3">
                           <div className="row g-2">
-                            <div className="col-6 firstDatepicker">
+                            <div className="col-lg-6 col-md-12 col-12 firstDatepicker">
                               <label className="form-label small">From Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'createdFromDate')}
@@ -3601,7 +3601,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                                 maxDate={filterData.createdToDate || new Date()}
                               />
                             </div>
-                            <div className="col-6">
+                            <div className="col-lg-6 col-md-12 col-12">
                               <label className="form-label small">To Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'createdToDate')}
@@ -3651,7 +3651,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                         </label>
                         <div className="card border-0 bg-light p-3">
                           <div className="row g-2">
-                            <div className="col-6">
+                            <div className="col-lg-6 col-md-12 col-12">
                               <label className="form-label small">From Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'modifiedFromDate')}
@@ -3663,7 +3663,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                                 maxDate={filterData.modifiedToDate || new Date()}
                               />
                             </div>
-                            <div className="col-6">
+                            <div className="col-lg-6 col-md-12 col-12">
                               <label className="form-label small">To Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'modifiedToDate')}
@@ -3713,7 +3713,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                         </label>
                         <div className="card border-0 bg-light p-3">
                           <div className="row g-2">
-                            <div className="col-6">
+                            <div className="col-lg-6 col-md-12 col-12">
                               <label className="form-label small">From Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'nextActionFromDate')}
@@ -3725,7 +3725,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                                 maxDate={filterData.nextActionToDate}
                               />
                             </div>
-                            <div className="col-6 lastDatepicker">
+                            <div className="col-lg-6 col-md-12 col-12  lastDatepicker">
                               <label className="form-label small">To Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'nextActionToDate')}
@@ -11047,6 +11047,43 @@ max-width: 600px;
         .verification-table tbody tr:nth-child(5) { animation-delay: 0.3s; }
         .verification-table tbody tr:nth-child(6) { animation-delay: 0.35s; }
         .verification-table tbody tr:nth-child(7) { animation-delay: 0.4s; }
+          `
+        }
+      </style>
+
+      <style>
+        {
+          `
+          @media (min-width:768px){
+          .penddingBtn{
+                  font-size: 10px !important;
+                  max-width: min-content;
+          }
+                  html body .content .content-wrapper {
+    margin-top: 3rem;
+    padding: 1.8rem 2.2rem 0;
+}
+                  
+          }
+          @media (max-width: 768px){
+          .CButtton{ font-size:12px; padding:2px; 
+          white-space: nowrap;}
+          html body .content .content-wrapper {
+    margin-top: 2rem;
+    padding: 1.8rem 1.2rem 0;
+}
+          }
+@media (max-width: 768px) {
+    .small {
+         display: block !important; 
+    }
+         .CourseType{
+        font-size: 13px;
+        text-wrap: auto;
+        white-space: nowrap;
+        margin-bottom:4px;
+}
+}
           `
         }
       </style>

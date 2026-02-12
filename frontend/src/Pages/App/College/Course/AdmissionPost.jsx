@@ -7000,7 +7000,12 @@ background: #fd2b5a;
     width: 300px !important;
     }
 
-
+@media (max-width: 768px) {
+    .small {
+         display: block !important; 
+    }
+         
+}
 `
 
                 }

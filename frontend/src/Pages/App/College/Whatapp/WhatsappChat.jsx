@@ -12203,26 +12203,7 @@ const WhatsappChat = () => {
         
         /* Generic mobile panel styles - apply to all col-4 panels on mobile */
         @media (max-width: 992px) {
-          /* Make all col-4 columns (side panels) fullscreen on mobile */
-          .row > .col-4,
-          .row > .col-lg-4,
-          .row > .col-md-4,
-          [class*="col-4"] {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            width: 100vw !important;
-            max-width: 100vw !important;
-            height: 100vh !important;
-            z-index: 9999 !important;
-            background: white !important;
-            animation: slideInRight 0.3s ease !important;
-            padding: 0 !important;
-            overflow-y: auto !important;
-          }
-          
+         
           /* Prevent body scroll when panel is open */
           body.panel-open {
             overflow: hidden !important;
@@ -15107,10 +15088,10 @@ margin-left:15px;
 .document-history .history-item:hover {
   background: linear-gradient(145deg, #e9ecef, #f8f9fa);
 }
-    .react-date-picker__calendar react-date-picker__calendar--open{
-    inset: 0 !important;
-    width: 300px !important;
-    }
+    // .react-date-picker__calendar react-date-picker__calendar--open{
+    // inset: 0 !important;
+    // width: 300px !important;
+    // }
         `}
       </style>
       <style>
@@ -15387,23 +15368,23 @@ margin-left:15px;
 .multi-select-loading .dropdown-arrow {
   animation: spin 1s linear infinite;
 }
-.firstDatepicker .react-calendar {
-    width: 250px !important;
-    height: min-content !important;
-    transform: translateX(0px)!important;
-}
-.translateX .react-calendar {
-  height: min-content !important;
-    transform: translateX(-110px) !important;
-    width: 250px !important;
-}
+// .firstDatepicker .react-calendar {
+//     width: 250px !important;
+//     height: min-content !important;
+//     transform: translateX(0px)!important;
+// }
+// .translateX .react-calendar {
+//   height: min-content !important;
+//     transform: translateX(-110px) !important;
+//     width: 250px !important;
+// }
 
-.react-calendar{
-    height: min-content !important;
-    // transform: translateX(-110px) !important;
-    width: 250px !important;
+// .react-calendar{
+//     height: min-content !important;
+//     // transform: translateX(-110px) !important;
+//     width: 250px !important;
 
-}
+// }
 @media (max-width: 768px) {
   .multi-select-options-new {
     max-height: 250px;
@@ -17714,10 +17695,10 @@ margin-left:15px;
 
           /* Responsive Design */
 
-          .react-date-picker__calendar.react-date-picker__calendar--open {
-              inset: 0 !important;
-              width: 300px !important;
-          }
+          // .react-date-picker__calendar.react-date-picker__calendar--open {
+          //     inset: 0 !important;
+          //     width: 300px !important;
+          // }
 
           
           .site-header--sticky--register:not(.mobile-sticky-enable) {

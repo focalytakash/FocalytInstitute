@@ -2282,7 +2282,7 @@ const LeadAnalyticsDashboard = () => {
           {/* Active Filters Alert */}
           {(selectedCenter !== 'all' || (selectedPeriod !== 'all' && selectedPeriod !== 'last30') || (useCustomDate && startDate && endDate)) && (
             <div className="alert alert-info py-2 mb-4 d-flex justify-content-between align-items-center" role="alert">
-              <small>
+              <small className='ActiveDayFilter'>
                 <strong>Active Filters:</strong>
                 {selectedCenter !== 'all' && ` Center: ${selectedCenter}`}
                 {!useCustomDate && selectedPeriod !== 'all' && selectedPeriod !== 'last30' && ` • Period: ${selectedPeriod === 'today' ? 'Today' :
@@ -2300,7 +2300,7 @@ const LeadAnalyticsDashboard = () => {
                 {useCustomDate && startDate && endDate && ` • Date Range: ${new Date(startDate).toLocaleDateString('en-IN')} to ${new Date(endDate).toLocaleDateString('en-IN')}`}
               </small>
               <button
-                className="btn btn-lr btn-outline-secondary"
+                className="btn btn-sm btn-outline-secondary resetAll"
                 onClick={() => {
                   const dates = getInitialDates();
                   setSelectedCenter('all');
@@ -2587,7 +2587,7 @@ const LeadAnalyticsDashboard = () => {
           {/* Charts Row */}
           <div className="row g-4 mb-4">
             {/* Conversion vs Dropout Chart */}
-            <div className="col-lg-6">
+            <div className="col-lg-6 admissionTrend">
               <div className="card shadow-sm h-100">
                 <div className="card-body">
                   <h3 className="h5 fw-semibold mb-5 d-flex align-items-center gap-2 , con-vs-drop">
@@ -2876,10 +2876,10 @@ const LeadAnalyticsDashboard = () => {
             </div>
 
             {/* Daily Admissions Chart */}
-            <div className="col-lg-6">
+            <div className="col-lg-6 admissionTrend">
               <div className="card shadow-sm h-100">
                 <div className="card-body">
-                  <h2 className="h4 fw-semibold mb-4 d-flex align-items-center gap-2">
+                  <h2 className="h4 fw-semibold mb-5 d-flex align-items-center gap-2">
                     <TrendingUp className="text-indigo" size={20} />
                     Admission Trends (Last 7 Days)
                   </h2>
@@ -2971,7 +2971,7 @@ const LeadAnalyticsDashboard = () => {
           <div className="card shadow-sm mb-4">
             <div className="card-body">
               <div className="d-flex justify-content-between align-items-center mb-4 card-flex">
-                <h2 className="h5 fw-semibold mb-0">Course-Counsellor Status Table</h2>
+                <h2 className="h5 fw-semibold mb-0 counsolerTable">Course-Counsellor Status Table</h2>
 
                 {/* Date Filter Controls */}
                 <div className="d-flex gap-2 align-items-center car-elements">
@@ -3142,8 +3142,8 @@ const LeadAnalyticsDashboard = () => {
                     </div>
                   </div>
                   <div className="col-10">
-                    <div className="row justify-content-center">
-                          <div className="card-body preVarification">
+                    <div className="row justify-content-center ml-7">
+                          <div className="card-body varUnvarified">
                       <div className="col-md-12 ">
                         <div className="card">
                             <h5 className="card-title">Verified vs Unverified</h5>
@@ -3753,7 +3753,7 @@ const LeadAnalyticsDashboard = () => {
                   </div>
                   <div className="d-flex align-items-center gap-2">
                     <button
-                      className="btn btn-lr btn-outline-danger"
+                      className="btn btn-sm btn-outline-danger CButtton"
                       onClick={clearAllFilters}
                     >
                       <i className="fas fa-times-circle me-1"></i>
@@ -3773,8 +3773,8 @@ const LeadAnalyticsDashboard = () => {
                 <div className="row g-4">
                   {/* Course Type Filter */}
                   <div className="col-md-3">
-                    <label className="form-label small fw-bold text-dark">
-                      <i className="fas fa-graduation-cap me-1 text-success"></i>
+                    <label className="multi-select-container-new fw-bold text-dark CourseType">
+                      <i className="fas fa-graduation-cap me-1 text-success CourseType"></i>
                       Course Type
                     </label>
                     <div className="position-relative">
@@ -3874,7 +3874,7 @@ const LeadAnalyticsDashboard = () => {
                     </label>
                     <div className="card border-0 bg-light p-3">
                       <div className="row g-2">
-                        <div className="col-6">
+                        <div className="col-6 fromDate">
                           <label className="form-label small">From Date</label>
                           <DatePicker
                             onChange={(date) => handleDateFilterChange(date, 'createdFromDate')}
@@ -3886,7 +3886,7 @@ const LeadAnalyticsDashboard = () => {
                             maxDate={filterData.createdToDate || new Date()}
                           />
                         </div>
-                        <div className="col-6">
+                        <div className="col-6 fromDate">
                           <label className="form-label small">To Date</label>
                           <DatePicker
                             onChange={(date) => handleDateFilterChange(date, 'createdToDate')}
@@ -4406,13 +4406,45 @@ height:100%!important;
 
       <style>{
         `
-
+.admissionTrend .recharts-legend-item{
+padding-right:10px!important;
+}
 /* Mobile responsive styles */
 @media (max-width: 768px) {
 
-.preVarification{
-padding-bottom:20px
+
+.counsolerTable{
+width:100%;
 }
+.ActiveDayFilter{
+margin-right:31%;
+}
+.resetAll{
+font-size:10px;
+box-sizing: content-box;
+margin-left:20px;
+padding:8px;
+
+}
+
+.CourseType{
+        font-size: 13px;
+        text-wrap: auto;
+        white-space: nowrap;
+        margin-bottom:4px;
+}
+
+.CButtton{
+font-size:11px;
+padding:2px;
+}
+
+.preVarification{
+padding-bottom:20px;
+}
+// .varUnvarified{
+// margin-left: 13px;
+// }
   
   .car-elements{
   overflow: scroll;
@@ -4426,27 +4458,37 @@ padding-bottom:20px
   .card-flex {
     flex-direction: column;
   }
-
+html body .content .content-wrapper {
+    margin-top: 2rem;
+    padding: 1.8rem 1.2rem 0;
+}
   .react-date-picker__inputGroup {
     box-sizing: border-box;
+        font-size: 14px;
+        white-space: nowrap;
   }
 
   .con-vs-drop {
     margin-bottom: 20px;
+    margin-left: 0px !important;
   }
 
   .recharts-legend-wrapper {
     margin-bottom: 0 !important;
   }
 
-  .recharts-legend-item-text {
-    margin-right: 54px !important; /* mobile spacing */
-  }
-
+  
   /* FIXED selector (was invalid before) */
-  .btn.btn-sm.btn-outline-danger {
-    font-size: 9px !important;
+  // .btn.btn-sm.btn-outline-danger {
+  //   font-size: 9px !important;
+  // }
+
+}
+  .card-body.li.recharts-legend-item legend-item-0{
+    padding-right: 10px !important; /* mobile spacing */
   }
+.admissionTrend .recharts-legend-item{
+padding-right:10px
 }
    
 
