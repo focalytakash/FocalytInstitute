@@ -3468,7 +3468,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                       </div>
                       <div className="d-flex align-items-center gap-2">
                         <button
-                          className="btn btn-sm btn-outline-danger CButtton"
+                          className="btn btn-sm btn-outline-danger CButton"
                           onClick={clearAllFilters}
                         >
                           <i className="fas fa-times-circle me-1"></i>
@@ -3587,7 +3587,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                           <i className="fas fa-calendar-plus me-1 text-success"></i>
                           Lead Creation Date Range
                         </label>
-                        <div className="card border-0 bg-light p-3">
+                        <div className="card border-0 bg-light p-1">
                           <div className="row g-2">
                             <div className="col-lg-6 col-md-12 col-12 firstDatepicker">
                               <label className="form-label small">From Date</label>
@@ -3632,12 +3632,12 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                           {/* Clear button */}
                           <div className="mt-2">
                             <button
-                              className="btn btn-sm btn-outline-danger w-100"
+                              className="btn btn-sm btn-outline-danger w-100 CButton"
                               onClick={() => clearDateFilter('created')}
                               disabled={!filterData.createdFromDate && !filterData.createdToDate}
                             >
                               <i className="fas fa-times me-1"></i>
-                              Clear Created Date
+                              Clear
                             </button>
                           </div>
                         </div>
@@ -3649,7 +3649,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                           <i className="fas fa-calendar-edit me-1 text-warning"></i>
                           Lead Modification Date Range
                         </label>
-                        <div className="card border-0 bg-light p-3">
+                        <div className="card border-0 bg-light p-1">
                           <div className="row g-2">
                             <div className="col-lg-6 col-md-12 col-12">
                               <label className="form-label small">From Date</label>
@@ -3694,12 +3694,12 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                           {/* Clear button */}
                           <div className="mt-2">
                             <button
-                              className="btn btn-sm btn-outline-danger w-100"
+                              className="btn btn-sm btn-outline-danger w-100 CButton"
                               onClick={() => clearDateFilter('modified')}
                               disabled={!filterData.modifiedFromDate && !filterData.modifiedToDate}
                             >
                               <i className="fas fa-times me-1"></i>
-                              Clear Modified Date
+                              Clear
                             </button>
                           </div>
                         </div>
@@ -3711,7 +3711,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                           <i className="fas fa-calendar-check me-1 text-info"></i>
                           Next Action Date Range
                         </label>
-                        <div className="card border-0 bg-light p-3">
+                        <div className="card border-0 bg-light p-0">
                           <div className="row g-2">
                             <div className="col-lg-6 col-md-12 col-12">
                               <label className="form-label small">From Date</label>
@@ -3755,12 +3755,12 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                           {/* Clear button */}
                           <div className="mt-2">
                             <button
-                              className="btn btn-sm btn-outline-danger w-100"
+                              className="btn btn-sm btn-outline-danger w-100 CButton"
                               onClick={() => clearDateFilter('nextAction')}
                               disabled={!filterData.nextActionFromDate && !filterData.nextActionToDate}
                             >
                               <i className="fas fa-times me-1"></i>
-                              Clear Next Action Date
+                              Clear
                             </button>
                           </div>
                         </div>
@@ -11066,7 +11066,7 @@ max-width: 600px;
                   
           }
           @media (max-width: 768px){
-          .CButtton{ font-size:12px; padding:2px; 
+          .CButton{ font-size:12px; padding:2px; 
           white-space: nowrap;}
           html body .content .content-wrapper {
     margin-top: 2rem;
@@ -11081,7 +11081,7 @@ max-width: 600px;
         font-size: 13px;
         text-wrap: auto;
         white-space: nowrap;
-        margin-bottom:4px;
+        margin-bottom:8px;
 }
 }
           `

@@ -8938,7 +8938,7 @@ const CRMDashboard = () => {
                           <i className="fas fa-calendar-plus me-1 text-success"></i>
                           Lead Creation Date Range
                         </label>
-                        <div className="card border-0 bg-light p-3 ">
+                        <div className="card border-0 bg-light p-1 ">
                           <div className="row g-2 ">
                             <div className="col-12 col-sm-12  col-md-6 col-lg-6 firstDatepick fixDate">
                               <label className="form-label small">From Date</label>
@@ -9000,7 +9000,7 @@ const CRMDashboard = () => {
                           <i className="fas fa-calendar-edit me-1 text-warning"></i>
                           Lead Modification Date Range
                         </label>
-                        <div className="card border-0 bg-light p-3">
+                        <div className="card border-0 bg-light p-1">
                           <div className="row g-2">
                             <div className="col-12 col-sm-12  col-md-6 col-lg-6 fixDate">
                               <label className="form-label small">From Date</label>
@@ -9062,7 +9062,7 @@ const CRMDashboard = () => {
                           <i className="fas fa-calendar-check me-1 text-info"></i>
                           Next Action Date Range
                         </label>
-                        <div className="card border-0 bg-light p-3">
+                        <div className="card border-0 bg-light p-1">
                           <div className="row g-2">
                             <div className="col-12 col-sm-12  col-md-6 col-lg-6 fixDate">
                               <label className="form-label small">From Date</label>
@@ -19247,7 +19247,7 @@ max-width: 600px;
     box-sizing: border-box;
     font-size: 13px;
     white-space: nowrap;
-    // width: 100%;
+    width: 100%;
   }
 
   @media (max-width: 767px) {
@@ -19267,7 +19267,7 @@ max-width: 600px;
         font-size: 13px;
         text-wrap: auto;
         white-space: nowrap;
-        margin-bottom:4px;
+        margin-bottom:8px;
 }
         
 @media (max-width: 768px) {

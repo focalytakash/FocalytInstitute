@@ -3146,7 +3146,7 @@ const LeadAnalyticsDashboard = () => {
                           <div className="card-body varUnvarified">
                       <div className="col-md-12 ">
                         <div className="card">
-                            <h5 className="card-title">Verified vs Unverified</h5>
+                            <h5 className="card-title varVSunvar">Verified vs Unverified</h5>
                             {loading ? (
                               <div className="text-center py-4">
                                 <div className="spinner-border text-primary" role="status">
@@ -4409,6 +4409,8 @@ height:100%!important;
 .admissionTrend .recharts-legend-item{
 padding-right:10px!important;
 }
+.varVSunvar{
+padding: 5px;}
 /* Mobile responsive styles */
 @media (max-width: 768px) {
 
