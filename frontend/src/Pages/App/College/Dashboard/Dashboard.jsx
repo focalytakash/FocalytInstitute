@@ -2590,7 +2590,7 @@ const LeadAnalyticsDashboard = () => {
             <div className="col-lg-6 admissionTrend">
               <div className="card shadow-sm h-100">
                 <div className="card-body">
-                  <h3 className="h5 fw-semibold mb-5 d-flex align-items-center gap-2 , con-vs-drop">
+                  <h3 className="h5 fw-semibold mb-5 d-flex align-items-center gap-2  con-vs-drop">
                     <Target className="text-success" size={20} />
                     Conversion vs Dropout Rates
                   </h3>
@@ -2601,7 +2601,7 @@ const LeadAnalyticsDashboard = () => {
                       <YAxis />
                       <Tooltip formatter={(value) => `${value}%`} />
                       <Legend />
-                      <Bar className='conversion-rate-bar' dataKey="conversionRate" fill="#10b981" name="Conversion Rate" />
+                      <Bar className='conversion-rate-bar conVersion' dataKey="conversionRate" fill="#10b981" name="Conversion Rate" />
                       <Bar dataKey="dropoutRate" fill="#ef4444" name="Dropout Rate" />
                     </BarChart>
                   </ResponsiveContainer>
@@ -3141,7 +3141,7 @@ const LeadAnalyticsDashboard = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-10">
+                  <div className="col-md-7 unverifiedcontainer">
                     <div className="row justify-content-center ml-7">
                           <div className="card-body varUnvarified">
                       <div className="col-md-12 ">
@@ -4411,10 +4411,15 @@ padding-right:10px!important;
 }
 .varVSunvar{
 padding: 5px;}
+
+.conVersion{
+margin-right: 15px;}
 /* Mobile responsive styles */
 @media (max-width: 768px) {
 
-
+.unverifiedcontainer{
+padding:2px 25px;
+}
 .counsolerTable{
 width:100%;
 }

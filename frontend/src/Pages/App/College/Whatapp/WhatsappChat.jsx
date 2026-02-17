@@ -8963,7 +8963,7 @@ const WhatsappChat = () => {
                         <button
                           onClick={() => fetchProfileData()}
                           className={`btn btn-outline-primary`}
-                          style={{ whiteSpace: 'nowrap' }}
+                          style={{ whiteSpace: 'nowrap', }}
                         >
                           <i className={`fas fa-search me-1`}></i>
                           Search

@@ -9224,22 +9224,24 @@ const CRMDashboard = () => {
                   {/* Left side - Buttons */}
                   <div style={{ display: "flex", gap: "8px" }}>
                   <button className="btn btn-sm btn-outline-primary" style={{
-                    padding: "6px 12px",
-                    fontSize: "11px",
-                    fontWeight: "600",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "4px"
+                     padding: "6px 12px",
+                   fontSize: "13px",
+                   fontWeight: "600",
+                   display: "flex",
+                   alignItems: "center",
+                   gap: "4px",
+                   boxSizing: "content-box"
                   }}
                     onClick={downloadLeads}
                   >
-                    <i className="fas fa-download" style={{ fontSize: "10px" }}></i>
+                    <i className="fas fa-download" style={{ fontSize: "18px" }}></i>
                     Download Leads
                   </button>
                   <button className="btn btn-sm btn-outline-primary" style={{
                     padding: "6px 12px",
-                    fontSize: "11px",
+                    fontSize: "13px",
                     fontWeight: "600",
+                    boxSizing: "content-box",
                     display: "flex",
                     alignItems: "center",
                     gap: "4px"
@@ -9250,15 +9252,16 @@ const CRMDashboard = () => {
                     setInput1Value('');
                   }}
                   >
-                    <i className="fas fa-download" style={{ fontSize: "10px" }}></i>
+                    <i className="fas fa-download" style={{ fontSize: "18px" }}></i>
                     Bulk Messages
                   </button>
                   {((permissions?.custom_permissions?.can_add_leads && permissions?.permission_type === 'Custom') || permissions?.permission_type === 'Admin') && (
                     <>
                       <button className="btn btn-sm btn-outline-primary" style={{
                         padding: "6px 12px",
-                        fontSize: "11px",
+                        fontSize: "13px",
                         fontWeight: "600",
+                        boxSizing: "content-box",
                         display: "flex",
                         alignItems: "center",
                         gap: "4px"
@@ -9267,7 +9270,7 @@ const CRMDashboard = () => {
                           openPanel(null, 'AddAllLeads');
                         }}
                       >
-                        <i className="fas fa-plus" style={{ fontSize: "10px" }}></i>
+                        <i className="fas fa-plus" style={{ fontSize: "18px" }}></i>
                         Add Leads
                       </button>
                     </>
@@ -9279,8 +9282,9 @@ const CRMDashboard = () => {
                         disabled={isLoadingProfiles || allProfiles.length === 0}
                         style={{
                           padding: "6px 12px",
-                          fontSize: "11px",
+                          fontSize: "13px",
                           fontWeight: "600",
+                          boxSizing: "content-box",
                           display: "flex",
                           alignItems: "center",
                           gap: "4px"
@@ -9289,7 +9293,7 @@ const CRMDashboard = () => {
                           openPanel(null, 'RefferAllLeads');
                         }}
                       >
-                        <i className="fas fa-share-alt" style={{ fontSize: "10px" }}></i>
+                        <i className="fas fa-share-alt" style={{ fontSize: "18px" }}></i>
                         Refer All Leads
                       </button>
                       <button
@@ -9297,8 +9301,9 @@ const CRMDashboard = () => {
                         disabled={isLoadingProfiles || allProfiles.length === 0}
                         style={{
                           padding: "6px 12px",
-                          fontSize: "11px",
+                          fontSize: "13px",
                           fontWeight: "600",
+                          boxSizing: "content-box",
                           display: "flex",
                           alignItems: "center",
                           gap: "4px"
@@ -9310,7 +9315,7 @@ const CRMDashboard = () => {
                           openEditPanel(null, 'bulkstatuschange');
                         }}
                       >
-                        <i className="fas fa-tasks" style={{ fontSize: "10px" }}></i>
+                        <i className="fas fa-tasks" style={{ fontSize: "18px" }}></i>
                         Bulk Action
                       </button>
                     </>)}
