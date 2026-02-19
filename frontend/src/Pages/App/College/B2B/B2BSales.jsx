@@ -2628,7 +2628,7 @@ const B2BSales = () => {
                     {/* Desktop Layout */}
                     <div className="d-none flex-row-reverse d-md-flex justify-content-between align-items-center gap-2">
                       {/* Left side - Buttons */}
-                      <div style={{ display: "flex", gap: "8px" }}>
+                      <div style={{ display: "flex", gap: "8px", whiteSpace: "nowrap" ,alignItems: "center"}}>
                         {/* Quick Search */}
                         <div className="d-flex align-items-center gap-2">
                           <div className="position-relative">
@@ -2696,7 +2696,7 @@ const B2BSales = () => {
                               borderColor: '#007bff',
                               color: 'white',
                               fontWeight: '500',
-                              padding: '8px 16px',
+                              padding: '5px 16px',
                               borderRadius: '6px',
                               fontSize: '13px',
                               boxShadow: '0 2px 4px rgba(0, 123, 255, 0.2)',
@@ -2714,7 +2714,7 @@ const B2BSales = () => {
                             backgroundColor: showFilters ? '#007bff' : '#ffffff',
                             color: showFilters ? '#ffffff' : '#6c757d',
                             fontWeight: '500',
-                            padding: '8px 16px',
+                            padding: '5px 16px',
                             borderRadius: '6px',
                             fontSize: '13px',
                             transition: 'all 0.2s ease',
@@ -3198,7 +3198,7 @@ const B2BSales = () => {
                         {/* Card Content */}
                         <div className="lead-content">
                           {/* Status Section */}
-                          <div className="status-section mb-2">
+                          <div className="status-section mb-2 LeadButtons">
                             <div className="d-flex align-items-center justify-content-between">
                               <div className="d-flex align-items-center">
                                 <i className="fas fa-tag text-primary me-2"></i>
@@ -4709,6 +4709,19 @@ Tech Solutions,Raj Kumar,9876543212,raj@tech.com,Corporate,Partner,789 Tech Park
   }
 `}</style>
 
+
+<style>
+  {
+    `
+    .LeadButtons{
+    white-space: nowrap;
+    overflow-x: auto;
+    width: 100%;
+}
+
+    `
+  }
+</style>
     </div >
   );
 };
