@@ -8676,7 +8676,7 @@ const CRMDashboard = () => {
 
                       <button
                         onClick={() => setIsFilterCollapsed(!isFilterCollapsed)}
-                        className={`btn ${!isFilterCollapsed ? 'btn-primary' : 'btn-outline-primary'}`}
+                        className={`btn ${!isFilterCollapsed ? 'btn-primary' : 'btn-outline-primary'} filterAdjust`}
                         style={{ whiteSpace: 'nowrap' }}
                       >
                         <i className={`fas fa-filter me-1 ${!isFilterCollapsed ? 'fa-spin' : ''}`}></i>
@@ -8940,7 +8940,7 @@ const CRMDashboard = () => {
                         </label>
                         <div className="card border-0 bg-light p-1 ">
                           <div className="row g-2 ">
-                            <div className="col-12 col-sm-12  col-md-6 col-lg-6 firstDatepick fixDate">
+                            <div className="col-12 col-sm-12  col-md-6 col-lg-6 firstDatepick fixDate ">
                               <label className="form-label small">From Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'createdFromDate')}
@@ -9002,7 +9002,7 @@ const CRMDashboard = () => {
                         </label>
                         <div className="card border-0 bg-light p-1">
                           <div className="row g-2">
-                            <div className="col-12 col-sm-12  col-md-6 col-lg-6 fixDate">
+                            <div className="col-12 col-sm-12  col-md-6 col-lg-6 fixDate lastDatepicker">
                               <label className="form-label small">From Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'modifiedFromDate')}
@@ -9014,8 +9014,8 @@ const CRMDashboard = () => {
                                 maxDate={filterData.modifiedToDate || new Date()}
                               />
                             </div>
-                            <div className="col-12 col-sm-12  col-md-6 col-lg-6 fixDate">
-                              <label className="form-label small">To Date</label>
+                            <div className="col-12 col-sm-12  col-md-6 col-lg-6 fixDate lastDatepicker">
+                              <label className="form-label small">To Date</label> 
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'modifiedToDate')}
                                 value={filterData.modifiedToDate}
@@ -9524,9 +9524,9 @@ const CRMDashboard = () => {
                             <div className="card border-0 shadow-sm mb-0 mt-2">
                               <div className="card-body px-1 py-0 my-2">
                                 <div className="row align-items-center justify-content-around">
-                                  <div className="col-md-7">
+                                  <div className="col-md-6 col-6">
                                     <div className="d-flex align-items-center">
-                                      <div className="form-check me-md-3 me-sm-1 me-1">
+                                      <div className="form-check me-md-3 me-sm-1 me-1 CBox">
                                         <input 
                                           onChange={(e) => handleCheckboxChange(profile, e.target.checked)} 
                                           checked={selectedProfiles && Array.isArray(selectedProfiles) ? selectedProfiles.includes(profile._id) : false}
@@ -9546,7 +9546,7 @@ const CRMDashboard = () => {
                                       <div className="d-flex flex-column">
                                         <h6 className="mb-0 fw-bold">{profile._candidate?.name || 'Your Name'}</h6>
                                         <small className="text-muted">{profile._candidate?.mobile || 'Mobile Number'}</small>
-                                        <small className="text-muted">{profile._candidate?.email || 'Email'}</small>
+                                        <small className="text-muted EmailSize">{profile._candidate?.email || 'Email'}</small>
                                       </div>
                                       <div className='whatsappbutton'>
                                         <button className="btn btn-outline-primary btn-sm border-0" title="Call" style={{ fontSize: '20px' }}>
@@ -9576,7 +9576,7 @@ const CRMDashboard = () => {
                                     </div>
                                   </div>
 
-                                  <div className="col-md-3 mt-3">
+                                  <div className="col-md-2 col-2 mt-2">
                                     <div className="d-flex gap-2">
                                       <div className="flex-grow-1">
                                         <input
@@ -9619,32 +9619,9 @@ const CRMDashboard = () => {
                                     </div>
                                   </div>
 
-                                  <div className="col-md-1 text-end d-md-none d-sm-block d-block">
-                                    <div className="btn-group">
-                                      {/* Three-dot button for mobile - Opens Modal */}
-                                      <button
-                                        className="btn btn-sm btn-outline-secondary border-0"
-                                        onClick={() => togglePopup(profileIndex)}
-                                        aria-label="Options"
-                                      >
-                                        <i className="fas fa-ellipsis-v"></i>
-                                      </button>
+                                
 
-                                      {/* Expand/Collapse button */}
-                                      <button
-                                        className="btn btn-sm btn-outline-secondary border-0"
-                                        onClick={() => setLeadDetailsVisible(profileIndex)}
-                                      >
-                                        {leadDetailsVisible === profileIndex ? (
-                                          <i className="fas fa-chevron-up"></i>
-                                        ) : (
-                                          <i className="fas fa-chevron-down"></i>
-                                        )}
-                                      </button>
-                                    </div>
-                                  </div>
-
-                                  <div className="col-md-1 text-end d-md-block d-sm-none d-none">
+                                  <div className="col-md-1 col-1">
                                     <div className="btn-group">
 
                                       <div style={{ position: "relative", display: "inline-block" }}>
@@ -10676,73 +10653,73 @@ const CRMDashboard = () => {
                                           return (
                                             <div className="enhanced-documents-panel">
                                               {/* Enhanced Stats Grid */}
-                                              <div className="stats-grid">
+                                              <div className="stats-grid ">
                                                 {(() => {
                                                   // Use backend counts only, remove static document fallback
                                                   const backendCounts = profile?.docCounts || {};
                                                   return (
                                                     <>
-                                                      <div className="stat-card total-docs">
-                                                        <div className="stat-icon d-md-block d-sm-none d-none">
-                                                          <i className="fas fa-file-alt"></i>
+                                                      <div className="stat-card total-docs docDetails">
+                                                        <div className="stat-icon d-md-blocke">
+                                                          <i className="fas fa-file-alt docIcon"></i>
                                                         </div>
                                                         <div className="stat-info">
                                                           <h4>{backendCounts.totalRequired || 0}</h4>
                                                           <p>Total Required</p>
                                                         </div>
-                                                        <div className="stat-trend d-md-block d-sm-none d-none">
+                                                        <div className="stat-trend d-md-block ">
                                                           <i className="fas fa-list"></i>
                                                         </div>
                                                       </div>
 
-                                                      <div className="stat-card uploaded-docs">
-                                                        <div className="stat-icon d-md-block d-sm-none d-none">
-                                                          <i className="fas fa-cloud-upload-alt"></i>
+                                                      <div className="stat-card uploaded-docs docDetails">
+                                                        <div className="stat-icon d-md-block ">
+                                                          <i className="fas fa-cloud-upload-alt docIcon"></i>
                                                         </div>
                                                         <div className="stat-info">
                                                           <h4>{backendCounts.uploadedCount || 0}</h4>
                                                           <p>Uploaded</p>
                                                         </div>
-                                                        <div className="stat-trend d-md-block d-sm-none d-none">
+                                                        <div className="stat-trend d-md-block ">
                                                           <i className="fas fa-arrow-up"></i>
                                                         </div>
                                                       </div>
 
-                                                      <div className="stat-card pending-docs">
-                                                        <div className="stat-icon d-md-block d-sm-none d-none">
-                                                          <i className="fas fa-clock"></i>
+                                                      <div className="stat-card pending-docs docDetails">
+                                                        <div className="stat-icon d-md-block">
+                                                          <i className="fas fa-clock docIcon"></i>
                                                         </div>
                                                         <div className="stat-info">
                                                           <h4>{backendCounts.pendingVerificationCount || 0}</h4>
                                                           <p>Pending Review</p>
                                                         </div>
-                                                        <div className="stat-trend d-md-block d-sm-none d-none">
+                                                        <div className="stat-trend d-md-block ">
                                                           <i className="fas fa-exclamation-triangle"></i>
                                                         </div>
                                                       </div>
 
-                                                      <div className="stat-card verified-docs">
-                                                        <div className="stat-icon d-md-block d-sm-none d-none">
-                                                          <i className="fas fa-check-circle"></i>
+                                                      <div className="stat-card verified-docs docDetails">
+                                                        <div className="stat-icon d-md-block">
+                                                          <i className="fas fa-check-circle docIcon"></i>
                                                         </div>
                                                         <div className="stat-info">
                                                           <h4>{backendCounts.verifiedCount || 0}</h4>
                                                           <p>Approved</p>
                                                         </div>
-                                                        <div className="stat-trend d-md-block d-sm-none d-none">
+                                                        <div className="stat-trend d-md-block ">
                                                           <i className="fas fa-thumbs-up"></i>
                                                         </div>
                                                       </div>
 
-                                                      <div className="stat-card rejected-docs">
-                                                        <div className="stat-icon d-md-block d-sm-none d-none">
-                                                          <i className="fas fa-times-circle"></i>
+                                                      <div className="stat-card rejected-docs docDetails">
+                                                        <div className="stat-icon d-md-block  iconGAp">
+                                                          <i className="fas fa-times-circle docIcon"></i>
                                                         </div>
                                                         <div className="stat-info">
                                                           <h4>{backendCounts.RejectedCount || 0}</h4>
                                                           <p>Rejected</p>
                                                         </div>
-                                                        <div className="stat-trend d-md-block d-sm-none d-none">
+                                                        <div className="stat-trend d-md-block ">
                                                           <i className="fas fa-arrow-down"></i>
                                                         </div>
                                                       </div>
@@ -13191,7 +13168,7 @@ background: #fd2b5a;
     resize: vertical;
 }
 .whatsappbutton{
-margin-left:15px;
+margin-left:5px;
 }
 /* .document-history {
     overflow-y: auto;
@@ -13227,7 +13204,7 @@ margin-left:15px;
 /* Mobile Responsive */
 @media (max-width: 768px) {
  .whatsappbutton{
-    margin-left:5px;
+    margin-left:7px;
     }
     .document-modal-content {
         width: 98%;
@@ -14029,7 +14006,11 @@ margin-left:15px;
     }
 
     .stats-grid {
-        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        overflow-x: auto;
+        grid-auto-flow: column;              
+        overflow-y: hidden;
+   
     }
 
     .documents-grid-enhanced {
@@ -19248,14 +19229,40 @@ max-width: 600px;
       
       <style>
 {`
+
+.CBox{
+padding:5px;}
   .fixDate {
     box-sizing: border-box;
     font-size: 13px;
-    white-space: nowrap;
+    // white-space: nowrap;
     width: 100%;
   }
+.docIcon{
+padding:12px;
+}
 
-  @media (max-width: 767px) {
+  @media(max-width:576px){
+  .filterAdjust{
+  margin-bottom: 7px !important;}
+  }
+  @media (max-width: 768px) {
+  .EmailSize{
+  height: 29px;
+  width: 135px;
+  }
+  .iconGAp{
+  margin-bottom: 6px;}
+
+  .docDetails{
+         display: block !important;
+        text-align: -webkit-center;
+        position: relative;
+        height: 177px;
+        width: 105px;
+        padding: 13px;
+    }
+
     .CButton {
       font-size: 13px;
       padding: 2px;
@@ -19279,6 +19286,12 @@ max-width: 600px;
     .small {
          display: block !important; 
     }
+}
+    .lastDatepicker .react-calendar {
+    width: 250px !important;
+    height: min-content !important;
+    transform: translateX(-110px)!important;
+
 }
 `}
 </style>

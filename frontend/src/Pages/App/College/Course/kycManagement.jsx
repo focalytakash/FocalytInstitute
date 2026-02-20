@@ -3713,7 +3713,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                         </label>
                         <div className="card border-0 bg-light p-0">
                           <div className="row g-2">
-                            <div className="col-lg-6 col-md-12 col-12">
+                            <div className="col-lg-6 col-md-12 col-12 lastDatepicker">
                               <label className="form-label small">From Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'nextActionFromDate')}
@@ -8277,7 +8277,11 @@ text-align: center;
     }
 
     .stats-grid {
-        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        overflow-x: auto;
+        grid-auto-flow: column;              
+        overflow-y: hidden;
+   
     }
     .stat-card{
     padding: 0.5rem
