@@ -14,7 +14,7 @@ import HomePage from '../src/Pages/Front/HomePage/HomePage';
 // import About from './Pages/Front/About/About';
 import About from './Pages/Front/About/About';
 import Labs from "./Pages/Front/Labs/Labs";
-// import Course from './Pages/Front/Courses/Course';
+import Course from './Pages/Front/Courses/Course';
 import Jobs from './Pages/Front/Jobs/Jobs';
 import JobDetails from './Pages/Front/Jobs/JobDetails';
 import Contact from './Pages/Front/Contact/Contact';
@@ -71,8 +71,8 @@ import CollegeRegister from './Pages/App/College/Register/CollegeRegister';
 import Dashboard from './Pages/App/College/Dashboard/Dashboard';
 import DashboardB2B from './Pages/App/College/B2B/DashboardB2B';
 import B2BFollowUp from './Pages/App/College/B2B/B2BFollowUp';
-// import DashboardPlacements from './Pages/App/College/Placements/DashboardPlacements';
-// import Placements from './Pages/App/College/Placements/Placements';
+import DashboardPlacements from './Pages/App/College/Placements/DashboardPlacements';
+import Placements from './Pages/App/College/Placements/Placements';
 import PlacementFollowUp from './Pages/App/College/Placements/PlacementFollowUp';
 import StatusPlacements from './Pages/App/College/Status/Placements';
 import Profile from './Pages/App/College/Profile/Profile';
@@ -191,7 +191,7 @@ const Layout = () => {
         <Route exact path="/candidate-review" element={<CandidateReview />} />
         {/* <Route exact path="/about_us" element={<About />} /> */}
         <Route exact path="/labs" element={<Labs />} />
-        {/* <Route exact path="/courses" element={<Course />} /> */}
+        <Route exact path="/courses" element={<Course />} />
         <Route exact path="/joblisting" element={<Jobs />} />
         <Route exact path="/jobdetailsmore/:jobId" element={<JobDetails />} />
         <Route exact path="/contact" element={<Contact />} />
@@ -215,10 +215,10 @@ const Layout = () => {
         {/* CollegeLayout will wrap only protected pages */}
         <Route path="/institute" element={<CollegeLayout  />}>
           <Route path="dashboard" element={<Dashboard />} />
-          {/* <Route path="dashboardplacements" element={<DashboardPlacements />} /> */}
+          <Route path="dashboardplacements" element={<DashboardPlacements />} />
           <Route path="dashboardb2b" element={<DashboardB2B />} />
           <Route path="b2bfollowup" element={<B2BFollowUp />} />
-          {/* <Route path="placements" element={<Placements />} /> */}
+          <Route path="placements" element={<Placements />} />
           <Route path="placementfollowup" element={<PlacementFollowUp />} />
           <Route path="statusplacements" element={<StatusPlacements />} />
           <Route path="myprofile" element={<Profile/>}/>
@@ -260,6 +260,42 @@ const Layout = () => {
           <Route path='trainerManagement' element={<TrainerManagement/>}/>
           <Route path='whatsappChat' element={<WhatsappChat/>}/>
           <Route path='whatsappWallet' element={<WhatsappWallet/>}/>
+        </Route>
+
+      <Route path="/candidate/login" element={<CandidateLogin />} />
+        <Route path="/candidate" element={<CandidateLayout />}>
+
+          <Route path="dashboard" element={<CandidateDashboard />} />
+          <Route path="myprofile" element={<CandidateProfile />} />
+          <Route path="document" element={<CandidatesDocuments />} />
+          <Route path="resume" element={<Resume />} />
+          <Route path="searchcourses" element={<SearchCourses />} />
+          <Route path="appliedCourses" element={<AppliedCourses />} />
+          <Route path="searchjob" element={<CandidatesJobs />} />
+          <Route path="nearbyJobs" element={<NearbyJobs />} />
+          <Route path="appliedJobs" element={<CandidateAppliedJobs />} />
+          <Route path="cashback" element={<CandidateWallet />} />
+          <Route path="myEarnings" element={<CandidateEarning />} />
+          <Route path="myAchievement" element={<MyAchievement />} />
+          <Route path="referral" element={<ReferAndEarn />} />
+          <Route path="Coins" element={<CoinsPage />} />
+          <Route path="requestLoan" element={<LoanApplicationPage />} />
+          <Route path="watchVideos" element={<WatchVideosPage />} />
+          <Route path="shareCV" element={<CandidateShare />} />
+          <Route path="notifications" element={<CandidateNotification />} />
+          <Route path="registerInterviewsList" element={<RegisterForInterview />} />
+          <Route path='InterestedCompanies' element={<Shortlisting />} />
+          {/* <Route path="course" element={<CourseDetail/>}/> */}
+          <Route path="course/:courseId" element={<SearchCourseDetail />} />
+          <Route path="job/:JobId" element={<CandidateViewJobs />} />
+          <Route path="reqDocs/:courseId" element={<RequiredDocuments />} />
+          <Route path="pendingFee" element={<PaymentDetails />} />
+          <Route path='candidateevent' element={<CandidatesEvents />} />
+          <Route path='appliedevents' element={<AppliedEvents/>}/>
+          <Route path='enrolledCourses' element={<EnrolledCourses/>}/>
+          <Route path='enrolledCourses/:courseId' element={<Curriculums/>}/>
+          <Route path='assignments' element={<Assignments/>}/>
+          <Route path='jobOffer' element={<JobOffer/>}/>
         </Route>
 
       </Routes>

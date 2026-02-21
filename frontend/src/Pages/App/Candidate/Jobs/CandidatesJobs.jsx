@@ -637,7 +637,7 @@ const CandidatesJobs = () => {
                     </div>
 
                     <div className="col-xl-8 col-lg-8 col-md-8 col-sm-5 col-6 text-right my-auto">
-                      <div className="d-flex flex-wrap align-items-center justify-content-end gap-3">
+                      <div className="d-flex flex-wrap align-items-center justify-content-end ">
                         <img
                           src={isMapView ? "/Assets/images/icons/map.png" : "/Assets/images/icons/map.png"}
                           // src={isMapView ? "/Assets/images/icons/map.png" : "/images/icons/listing.png"} 
@@ -954,9 +954,9 @@ const CandidatesJobs = () => {
                           <Link to={`/candidate/job/${job._id}`}>
                             <h5>{job.displayCompanyName || job._company[0]?.name}</h5>
                             <span className="job_cate">{job.title || 'NA'}</span>
-                            <div className="row">
+                            <div className="row jobDetailContainer">
                               {/* Salary */}
-                              <div className="col-md-6">
+                              <div className="col-md-6   ">
                                 <div className="course_spec">
                                   <div className="spe_icon">
                                     <i className="la la-money"></i>
@@ -3548,6 +3548,16 @@ input.star:checked ~ .rev-box {
     color: #FC2B5A;
         }   
     `
+  }
+</style>
+
+<style>
+  {
+`
+.jobDetailContainer{
+display: flex;
+}
+`
   }
 </style>
     </>

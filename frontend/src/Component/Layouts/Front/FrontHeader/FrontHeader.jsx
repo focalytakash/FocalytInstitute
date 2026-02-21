@@ -293,11 +293,11 @@ const FrontHeader = () => {
                               Login as Company
                             </Link>
                           </li> */}
-                          {/* <li>
+                          <li>
                             <Link to="/candidate/login" className="dropdown-item">
                               Login as Student
                             </Link>
-                          </li> */}
+                          </li>
                           <li>
                             <Link to="/institute/login" className="dropdown-item">
                               Login as Institute

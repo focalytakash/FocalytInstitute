@@ -80,20 +80,20 @@ const SearchCourses = () => {
     <div className="">
       <div className="container mt-3">
         {/* Breadcrumbs header for desktop */}
-        <div className="content-header row d-xl-block d-lg-block d-md-none d-sm-none d-none">
+        <div className="content-header row d-xl-block d-lg-block ">
           <div className="content-header-left col-md-9 col-12 mb-2">
             <div className="row breadcrumbs-top">
               <div className="col-12 my-auto">
-                <h3 className="content-header-title float-left mb-0">Search Courses</h3>
+                <h3 className="content-header-title float-left mb-0 textSIze">Search Courses</h3>
                 <div className="breadcrumb-wrapper col-12">
-                  <ol className="breadcrumb">
+                  <ol className="breadcrumb  textSIze " style={{paddingLeft: "15px !important"}}       >
                     <li className="breadcrumb-item">
                       <Link to="/candidate/dashboard">Home</Link>
                     </li>
                     <li className="breadcrumb-separator">
                       <i className="fas fa-angle-right mx-1 text-muted"></i>
                     </li>
-                    <li className="breadcrumb-item active">Search Courses</li>
+                    <li className="breadcrumb-item active textSIze ">Search Courses</li>
                   </ol>
                 </div>
               </div>
@@ -101,7 +101,7 @@ const SearchCourses = () => {
           </div>
         </div>
 
-        <ul className="nav nav-tabs justify-content-center d-md-none d-sm-none" id="courseTabs">
+        <ul className="nav nav-tabs justify-content-center" id="courseTabs">
           <li className="nav-item">
             <Link className="nav-link active" to="/search-courses">
               Search Courses
@@ -650,6 +650,18 @@ button.close {
     .breadcrumb-item a {
     color: #FC2B5A;
         }
+            `
+          }
+        </style>
+
+        <style>
+          {
+
+            `
+            
+            .textSIze{
+            font-size:clamp(13px, 2.5vw,  18px);
+            }
             `
           }
         </style>

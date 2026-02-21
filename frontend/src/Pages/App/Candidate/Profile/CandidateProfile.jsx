@@ -4308,8 +4308,8 @@ width: 40%;
 }
 
 .intro-options-body {
-  padding: 20px;
-}
+  padding: 0px 15px;
+} 
 
 .intro-option-card {
   display: flex;

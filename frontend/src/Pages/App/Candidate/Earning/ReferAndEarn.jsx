@@ -219,7 +219,7 @@ ${backendUrl}/candidate/login?refCode=${id}`;
                       Go
                     </button>
                     <a
-                      className="extra-ss btn btn-danger d-inline waves-effect waves-light mb-2 text-white mx-md-0 mx-0 px-xl-2 px-lg-2 px-md-2 px-sm-2 px-1"
+                      className="extra-ss btn btn-danger d-inline waves-effect waves-light mb-2 text-white mx-md-0 mx-0 px-xl-2 px-lg-2 px-md-2 px-sm-2 px-1 py-1"
                       href="/candidate/referral"
                     >
                       RESET

@@ -1385,7 +1385,7 @@ const CandidateProfile = forwardRef((props, ref) => {
 
     return (
         <div className="resume-builder-container">
-            {/* <div className='d-flex align-items-center mb-3 mediawidth'>
+            <div className='d-flex align-items-center mb-3 mediawidth'>
                 <button
                     className="audio-intro-btn"
                     onClick={() => {
@@ -1411,7 +1411,7 @@ const CandidateProfile = forwardRef((props, ref) => {
                         }}
                     />
                 </label>
-            </div> */}
+            </div>
 
             <div className="resume-builder-header mb-4">
                 <h2 className="resume-builder-title">Professional Resume Builder</h2>
@@ -1451,7 +1451,7 @@ const CandidateProfile = forwardRef((props, ref) => {
             <div className="resume-content">
                 {/* Personal Info Section */}
                 <div className={`resume-section ${activeSection === 'personal' ? 'active' : ''}`}>
-                    <div className="resume-paper">
+                    <div className="resume-paper ">
                         <div className="resume-header">
                             <div className="profile-image-container">
                                 <div className="profile-image">
@@ -4118,6 +4118,24 @@ width: 100%;
     transform: scale(1.1);
   }
 `}</style>
+
+<style>
+    {
+        `
+       
+        @media(max-width: 375px){
+        .resumeCard{
+            width: 292px;
+            border: 2px solid;
+        }
+           
+}
+
+
+        }
+        `
+    }
+</style>
         </div>
     );
 });

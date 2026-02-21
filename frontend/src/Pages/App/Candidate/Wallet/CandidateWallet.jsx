@@ -22,8 +22,8 @@ const CandidateWallet = () => {
 
     return (
         <>
-            <section className="money-rain py-3">
-                <div className="mipie-earn px-2">
+            <section className="money-rain py-3 cashBackSection">
+                <div className="mipie-earn px-2 ms-2 CashHead">
                     <h4 className="font-weight-bold now-padding">Now you can earn with Focalyt</h4>
                     <h4 className="font-weight-bold">अब आप Focalyt से कमा सकते हैं</h4>
                 </div>
@@ -35,28 +35,28 @@ const CandidateWallet = () => {
                                 <ul className="contact-info list-unstyled">
                                     <li className="pt-1">
                                         <img src="/Assets/images/nikelogo.png" alt="check icon" />
-                                        <h5 className="font-weight-bold">
+                                        <h5 className="font-weight-bold cashBack-text">
                                             Complete your profile and earn upto रु {thresholdCashback.profilecomplete || 50}  / अपना प्रोफ़ाइल पूरा करें और रु{thresholdCashback.profilecomplete || 50} तक कमाएँ
 
                                         </h5>
                                     </li>
                                     <li className="pt-1">
                                         <img src="/Assets/images/nikelogo.png" alt="check icon" />
-                                        <h5 className="font-weight-bold">
+                                        <h5 className="font-weight-bold cashBack-text">
                                             Apply on jobs and earn up to रु {thresholdCashback.apply || 10} /
                                             नौकरियों पर आवेदन करें और रु {thresholdCashback.apply || 10} तक कमाएं
                                         </h5>
                                     </li>
                                     <li className="pt-1">
                                         <img src="/Assets/images/nikelogo.png" alt="check icon" />
-                                        <h5 className="font-weight-bold">
+                                        <h5 className="font-weight-bold cashBack-text">
                                             Focalyt will pay you रु {thresholdCashback.apply || 10}  if your profile gets shortlisted / यदि आपकी प्रोफ़ाइल को शॉर्टलिस्ट किया जाता है तो Focalyt आपको रु 10 का भुगतान करेगा
 
                                         </h5>
                                     </li>
                                     <li className="pt-1">
                                         <img src="/Assets/images/nikelogo.png" alt="check icon" />
-                                        <h5 className="font-weight-bold">
+                                        <h5 className="font-weight-bold cashBack-text">
                                             Please ensure that you are applying on Focalyt every week or else your money will be forfeited / कृपया सुनिश्चित करें कि आप हर सप्ताह Focalyt पर आवेदन कर रहे हैं अन्यथा आपका पैसा जब्त कर लिया जाएगा
                                         </h5>
                                     </li>
@@ -355,6 +355,25 @@ const EarningCard = ({ imageSrc, title, description, descriptions, buttonText, b
         background-position: bottom !important;
     }
 }
+                    `
+                }
+            </style>
+
+            <style>
+                {
+                    `
+                    .cashBackSection{
+                        padding: 0px 13px;
+                        }
+                    .CashHead{
+                    width: 50% !important; }
+                    @media (max-width:425px){
+                    .CashHead{
+                        width: 80% !important;
+                    }
+                        .cashBack-text{
+                        font-size: 15px !important;}
+                    }
                     `
                 }
             </style>

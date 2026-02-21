@@ -153,9 +153,9 @@ const CandidateDocumets = ({ candidate, documents }) => {
 
               <div className="card-content">
                 <div className="card-body">
-                  <div className="row">
+                  <div className="row gy-1">
                     {documentLabels.map(({ name, label }, i) => (
-                      <div className="col-md-6 mb-3" key={i}>
+                      <div className="col-md-6 mb-3 fw-bolder " key={i}>
                         <label>
                           {label} {["Photograph", "AadharCardFront", "AadharCardBack", "10thMarksheet"].includes(name) && <span className="mandatory">*</span>}
                         </label>
@@ -1228,7 +1228,6 @@ input.star:checked ~ .rev-box {
     `
   }
  </style>
-
 
     </>
   )

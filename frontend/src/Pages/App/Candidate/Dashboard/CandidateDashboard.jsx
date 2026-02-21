@@ -192,15 +192,15 @@ const CandidateDashboard = () => {
               <div className="row">
 
 
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-sm-0 mb-0 candidate-card">
+                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-sm-0 mb-0 candidate-card w-100">
                   <div className="card mt-1 mb-2">
                     <div className="col-xl-12 p-3">
                       <div className="row">
-                        <div className="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 my-auto ">
+                        <div className="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 my-auto "> 
                           <h4 className="card-title mb-0" id="wrapping-bottom">Latest Applied Jobs / नवीनतम लागू नौकरियां</h4>
                         </div>
-                        <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 text-right my-auto">
-                          <a href="/candidate/appliedJobs" className="btn btn-outline-primary btn-sm waves-effect waves-light">View All</a>
+                        <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 text-right my-auto ">
+                          <a href="/candidate/appliedJobs" className="btn btn-outline-primary btn-sm waves-effect waves-light viewAllBtn">View All</a>
                         </div>
                       </div>
                     </div>
@@ -760,6 +760,21 @@ background-color: #64ccf3;
         }
 `
 }</style>
+
+<style>
+  {
+    `
+   
+    @media (max-width:768px){
+    
+    .viewAllBtn{
+    font-size: 12px;
+    margin: 6px;
+    width: min-content !important;
+    }
+    }`
+  }
+</style>
 
           </div>
       
