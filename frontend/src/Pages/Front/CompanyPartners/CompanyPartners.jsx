@@ -218,14 +218,28 @@ function CompanyPartners() {
                     position: relative;
                     z-index: 1;
                 }
+                                        //  6:08  patner logo css
+.partner-logo {
+  overflow: hidden;   /* prevents image from overflowing */
+  width: 120px;
+}
 
-                .partner-logo {
-                    max-width: 100%;
-                    max-height: 100px;
-                    object-fit: contain;
-                    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
-                    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-                }
+.partner-logo img {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.partner-logo:hover img {
+  transform: scale(1.2);   /* zoom level */
+}
+
+                // .partner-logo {
+                //     max-width: 100%;
+                //     max-height: 100px;
+                //     object-fit: contain;
+                //     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+                //     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+                // }
 
                 .partner-card:hover .partner-logo {
                     transform: scale(1.1) rotate(2deg);
@@ -293,11 +307,11 @@ function CompanyPartners() {
                     }
 
                     .partner-card {
-                        border-color: rgba(252, 43, 90, 0.2);
-                        background: linear-gradient(135deg, rgba(30, 30, 40, 0.9) 0%, rgba(40, 40, 55, 0.8) 100%);
-                        box-shadow: 0 4px 20px rgba(252, 43, 90, 0.15),
-                                    0 2px 8px rgba(0, 0, 0, 0.3),
-                                    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+                        // border-color: rgba(252, 43, 90, 0.2);
+                        // background: linear-gradient(135deg, rgba(30, 30, 40, 0.9) 0%, rgba(40, 40, 55, 0.8) 100%);
+                        // box-shadow: 0 4px 20px rgba(252, 43, 90, 0.15),
+                        //             0 2px 8px rgba(0, 0, 0, 0.3),
+                        //             inset 0 1px 0 rgba(255, 255, 255, 0.1);
                     }
 
                     .partner-card:hover {
@@ -309,20 +323,14 @@ function CompanyPartners() {
                     }
 
                     .partner-name {
-                        color: #e2e8f0;
+                        color: #6c7177;
                     }
 
                     .partner-card:hover .partner-name {
                         color: #FC2B5A;
                     }
 
-                    .marquee-fade-left {
-                        background: linear-gradient(to right, rgba(15, 15, 20, 1), transparent);
-                    }
-
-                    .marquee-fade-right {
-                        background: linear-gradient(to left, rgba(15, 15, 20, 1), transparent);
-                    }
+                  
                 }
 
                 `}
