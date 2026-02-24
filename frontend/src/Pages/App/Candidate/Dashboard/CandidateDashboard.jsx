@@ -772,6 +772,10 @@ background-color: #64ccf3;
     margin: 6px;
     width: min-content !important;
     }
+
+    .card{
+      margin-bottom: 1.5rem !important;
+      }
     }`
   }
 </style>

@@ -1474,7 +1474,7 @@ function CandidateLayout({ children }) {
 }
     .breadcrumb {
     border-left: 1px solid #d6dce1;
-    padding: .5rem 0 .5rem 1rem !important;
+     padding: .5rem 0 .5rem .4rem !important;
     }
 //     .breadcrumb-item a, .card-body a {
 //     color: #fc2b5a;

@@ -156,8 +156,9 @@ const SearchCourses = () => {
 
                     </a>
 
-                    <div className="course_inf pt-0">
-                      <Link to={`/candidate/course/${course._id}`}>
+                    <div className="course_inf pt-0 card-height">
+                      <div className="card-details">
+                         <Link to={`/candidate/course/${course._id}`}>
 
                         <h5>{course.name || "N/A"}</h5>
                         <span className="job_cate">
@@ -230,6 +231,7 @@ const SearchCourses = () => {
                           </div>
                         </div>
                       </Link>
+                      </div>
 
                       <div className="row mt-1">
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
@@ -251,9 +253,13 @@ const SearchCourses = () => {
   Chat Now
 </a>
 */}
-                          <button onClick={() => openChatbot()} className="apply-thisjob text-left px-1 apply-padding mb-0 mt-0">
-                            Chat Now
-                          </button>
+                          <button 
+  onClick={openChatbot} 
+  className="apply-thisjob text-left px-1 apply-padding mb-0 mt-0"
+>
+  <i class="fa-regular fa-comment-dots"></i>
+  Chat Now
+</button>
                         </div>
                       </div>
                     </div>
@@ -538,6 +544,9 @@ div#floating-apply {
     padding: 15px;
 }
 .course_inf h5 {
+    justify-content: center;
+    height: 50px;
+    margin-top: 5px;
     font-size: 17px;
     text-transform: capitalize;
     font-weight: 600;
@@ -583,9 +592,9 @@ div#floating-apply {
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
     border-radius: 8px;
-    padding: 12px 20px;
-    font-size: 12px;
-    font-family: Open Sans;
+    padding: 8px 20px;
+    font-size: 15px;
+    font-family: Arial;
     font-weight: bold;
     text-align: left;
 }
@@ -662,6 +671,41 @@ button.close {
             .textSIze{
             font-size:clamp(13px, 2.5vw,  18px);
             }
+            `
+          }
+        </style>
+
+        <style>
+          {
+            `
+           @media (max-width: 768px){
+           .card-height{
+               height: 340px;
+               }
+           }
+            `
+          }
+        </style>
+        <style>
+          {
+            `
+            @media (max-width: 1018px){
+            .card-details{
+            height: 292px;
+            }
+            }
+            @media (max-width: 769px){
+                .card-details{
+                    height: 85%;
+                }
+            }
+                @media (max-width: 426px){
+                  .apply-thisjob i {
+                    font-size: 21px !important;  
+                    }
+                    .apply-thisjob{
+                    font-size: 13px !important;
+                    }
             `
           }
         </style>

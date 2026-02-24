@@ -121,17 +121,18 @@ const CandidateDocumets = ({ candidate, documents }) => {
 
   return (
     <>
-        <div class="content-header row d-xl-block d-lg-block d-md-none d-sm-none d-none">
+        <div class="">
           <div class="content-header-left col-md-9 col-12 mb-2">
             <div class="row breadcrumbs-top">
               <div class="col-12">
                 <h3 class="content-header-title float-left mb-0">Documents</h3>
                 <div class="breadcrumb-wrapper col-12">
                   
-                  <ol className="breadcrumb">
+                  <ol className="breadcrumb" >
                   <li className="breadcrumb-item">
                     <Link to="/candidate/dashboard">Home</Link>
                   </li>
+
                   <li className="breadcrumb-separator">
                     <i className="fas fa-angle-right mx-1 text-muted"></i>
                   </li>
@@ -156,7 +157,7 @@ const CandidateDocumets = ({ candidate, documents }) => {
                   <div className="row gy-1">
                     {documentLabels.map(({ name, label }, i) => (
                       <div className="col-md-6 mb-3 fw-bolder " key={i}>
-                        <label className="mb-2">
+                        <label className="mb-2 docLable-Size">
                           {label} {["Photograph", "AadharCardFront", "AadharCardBack", "10thMarksheet"].includes(name) && <span className="mandatory">*</span>}
                         </label>
                         {documentData[name] ? (
@@ -179,7 +180,7 @@ const CandidateDocumets = ({ candidate, documents }) => {
                       <div className="col-md-6 mb-3" key={i}>
                         <label>Additional Document {i + 1}</label>
                         <input type="file" className="form-control" onChange={(e) => uploadFile(e, `AdditionalDocuments-${i}`)} />
-                        <button className="btn btn-danger btn-sm mt-1" onClick={() => removeAdditionalDocument(i)}>Remove</button>
+                        <button className="btn btn-danger btn-sm mt-1 w-auto" onClick={() => removeAdditionalDocument(i)}>Remove</button>
                       </div>
                     ))}
                   </div>
@@ -881,7 +882,7 @@ input.star:checked ~ .rev-box {
   color: #fff!important;
 }
 .btn{
-  border: 1px solid #FC2B5A!important;
+  // border: 1px solid #FC2B5A!important;
 }
 
 .rebase-job.disabled {
@@ -1228,7 +1229,17 @@ input.star:checked ~ .rev-box {
     `
   }
  </style>
-
+<style>
+  {
+    `
+    .docLable-Size{
+      font-size: 13px !important;
+      }
+    
+}
+    `
+  }
+</style>
     </>
   )
 }

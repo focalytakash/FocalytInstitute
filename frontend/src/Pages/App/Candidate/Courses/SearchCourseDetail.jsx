@@ -732,7 +732,7 @@ const CourseDetails = () => {
 
                   {!isApplied ? (
                     <a
-                      className="apply-thisjob apply-div-field text-left d-xl-block d-lg-block d-md-block d-sm-none d-none mb-2 decoration-none"
+                      className="apply-thisjob apply-div-field text-left d-xl-block d-lg-block d-md-block d-sm-none d-none mb-2 "
                       href="#"
                       title="apply"
                       style={{ textDecoration: 'none' }}
@@ -745,7 +745,8 @@ const CourseDetails = () => {
                         document.body.classList.add('modal-open');
                       }}
                     >
-                      <i className="la la-paper-plane ml-2"></i>Apply Now
+                      <i className="la la-paper-plane ml-2"></i>
+                      Apply Now
                     </a>
                   ) : course.registrationStatus !== 'Paid' && Number(course.registrationCharges) > 0 ? (
                     <a
@@ -767,7 +768,7 @@ const CourseDetails = () => {
                         cursor: 'not-allowed',
                         textDecoration: 'none',
                       }}
-                      className="apply-thisjob text-left px-0 py-3 d-xl-block d-lg-block d-md-block d-sm-none d-none"
+                      className="apply-thisjob text-left px-0 py-3 d-xl-block d-lg-block d-md-block d-sm-block d-block RegButton"
                     >
                       <i className="la la-paper-plane ml-3"></i>Course Successfully Applied
                     </a>
@@ -788,6 +789,7 @@ const CourseDetails = () => {
                           document.body.classList.add('modal-open');
                         }}
                       >
+                        <i className="la la-paper-plane ml-2"></i>
                         APPLY NOW
                       </a>
                     ) : course.registrationStatus !== 'Paid' && Number(course.registrationCharges) > 0 ? (
@@ -819,6 +821,7 @@ const CourseDetails = () => {
                       className="apply-thisjob text-center apply-div-field text-left px-0 py-2 mb-2 decoration-none shadow text-white"
                       href={`tel:${mobileNumber}`}
                     >
+                      <i className="la la-phone plane-font me-2"></i>
                       CALL NOW
                     </a>
                   </div>
@@ -893,7 +896,7 @@ const CourseDetails = () => {
                   {/* Mobile Apply Button */}
                   {!isApplied ? (
                     <a
-                      className="viewjob-apply apply-thisjob apply-div-field text-left px-0 d-xl-none d-lg-none d-md-none d-sm-block d-block mt-xl-2 mt-lg-2 mt-md-2 mt-sm-1 mt-1 text-center"
+                      className="viewjob-apply apply-thisjob apply-div-field text-left px-0 d-xl-none d-lg-none d-md-none d-sm-block d-block mt-xl-2 mt-lg-2 mt-md-2 mt-sm-1 mt-1 text-center RegButton"
                       href="#"
                       onClick={(e) => {
                         e.preventDefault();
@@ -1181,7 +1184,7 @@ const CourseDetails = () => {
                             <ul className="contact-info color-pink mb-2">
                               {course.questionAnswers && course.questionAnswers.map((ele, index) => (
                                 <React.Fragment key={index}>
-                                  <li id="que" className="mb-1">
+                                  <li id="que" className="mb-1 ">
                                     <img src="/Assets/public_assets/images/ul_li_shape.svg" draggable="false" alt="List icon" /> {stripHTML(ele.Question)}
                                   </li>
                                   <li id="que">{stripHTML(ele.Answer)}</li>
@@ -1642,11 +1645,11 @@ const CourseDetails = () => {
     text-align: left!important;
 }
 .apply-thisjob i {
-    font-size: 28px;
-    margin-right: 8px;
-    line-height: 11px;
-    position: relative;
-    top: 5px;
+    font-size: 22px !important;
+    margin-right: 8px !important;
+    line-height: 11px !important;
+    position: relative !important;
+    top: 5px !important;
 }
 .extra-job-info {
     float: left;
@@ -6974,6 +6977,31 @@ max-width: 100%;
       }
     </style>
 
+<style>
+  {
+`
+@media (max-width: 768px) {
+.apply-thisjob{
+        margin-top: 5px;
+        float:right;
+        width:51% !important;
+        white-space: nowrap;
+}
+.apply-thisjob i {
+    font-size: 21px !important;
+    margin-right: 5px !important;
+    line-height: 11px !important;
+    position: relative !important;
+    top: 4px !important;
+}
+    .RegButton{
+        width: auto !important;  
+
+    }
+}
+`
+  }
+</style>
     </>
   );
 };

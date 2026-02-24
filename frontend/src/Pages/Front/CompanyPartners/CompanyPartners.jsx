@@ -221,7 +221,7 @@ function CompanyPartners() {
                                         //  6:08  patner logo css
 .partner-logo {
   overflow: hidden;   /* prevents image from overflowing */
-  width: 120px;
+  width: 110px;
 }
 
 .partner-logo img {

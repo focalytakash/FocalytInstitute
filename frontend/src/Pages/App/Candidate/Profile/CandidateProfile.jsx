@@ -4378,7 +4378,7 @@ justify-content: center;
   background-color: #fc2b5a;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 12px;
   padding: 10px 15px;
   display: flex;
   align-items: center;
