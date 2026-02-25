@@ -30,6 +30,52 @@ const AppliedCourses = () => {
     }
   };
 
+  const newLocal = `
+    @media(max-width: 768px) {
+      .appliedCourse-Container {
+        // display: flex;
+        // flex-direction: column;
+      }
+      .appliedCourse-Container .column {
+        width: 100% !important;
+      }
+         .job-single-sec .job-overview ul li{
+    width: 50%!important;
+    padding-left: 35px!important;
+    float: left;
+  }
+   
+    .job-overview ul>li i {
+  position: absolute;
+  top: 5px;
+  font-size: 25px;
+  color: #FC2B5A;
+}
+
+
+.BTnPosition{
+display: flex;
+justify-content: flex-end;
+align-items: flex-end;
+}
+  .uploadeBtn{
+  padding: 0.5rem 1rem;
+  }
+
+    }
+
+    @media(max-width: 425px) {
+      .BTnPosition{
+        display: block;
+      } 
+        .uploadeBtn{
+        white-space: nowrap;
+        margin-top: 5px;
+        margin-left: 23px;
+        }
+        
+    }
+    `;
   return (
     <>
 
@@ -79,7 +125,7 @@ const AppliedCourses = () => {
               return (
                 <div className="card mb-2" key={index}>
                   <div className="card-body">
-                    <div className="row pointer">
+                    <div className="row pointer appliedCourse-Container">
                       <div className="col-lg-8 col-md-7 column">
                         <div className="job-single-sec mt-xl-0">
                           <div className="job-single-head border-0 pb-0">
@@ -132,7 +178,7 @@ const AppliedCourses = () => {
                           </Link>
                         </div>
                       </div>
-                      <div className="col-lg-4 col-md-5 column mt-xl-1 mt-lg-1 mt-md-1 mt-sm-3 mt-0">
+                      <div className="col-lg-4 col-md-5 column mt-xl-1 mt-lg-1 mt-md-1 mt-sm-3 mt-0 BTnPosition">
                         <div className="extra-job-info mt-1">
                           <span className="px-0">
                             <i className="la la-map"></i>
@@ -142,10 +188,10 @@ const AppliedCourses = () => {
                               .format("DD MMM YYYY")}
                           </span>
                         </div>
-                        <div className="add--documents mt-1">
+                        <div className="add--documents mt-1 ">
                           <Link
                             to={`/candidate/reqDocs/${course?._id}`}
-                            className="btn btn-success text-white waves-effect waves-light"
+                            className="btn btn-success text-white waves-effect waves-light uploadeBtn"
                           >
                             Upload Documents
                           </Link>
@@ -278,10 +324,10 @@ const AppliedCourses = () => {
 }
 
 @media(max-width:768px){
-  .job-overview > ul{
-display: flex;
-flex-direction: column;
-  }
+//   .job-overview > ul{
+// display: flex;
+// flex-direction: column;
+//   }
   .job-single-sec .job-overview ul li{
     width: 100%!important;
   }
@@ -291,6 +337,11 @@ flex-direction: column;
         }
       `}
       </style>
+      <style>
+  {
+    newLocal
+  }
+</style>
     </>
   );
 };

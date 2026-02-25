@@ -359,7 +359,7 @@ const Project = ({ selectedVertical = null, onBackToVerticals = null }) => {
     // URL-based restoration logic - only run when projects are loaded
     const { stage, projectId } = getProjectState();
 
-    console.log('Project component - URL restoration:', { stage, projectId, projectsLoaded: projects.length > 0 });
+    // console.log('Project component - URL restoration:', { stage, projectId, projectsLoaded: projects.length > 0 });
 
     // Don't make any decisions until projects are loaded
     if (projects.length === 0) {
@@ -521,10 +521,10 @@ const Project = ({ selectedVertical = null, onBackToVerticals = null }) => {
         <div className='d-md-block d-none'>
           <div className="d-flex align-items-center gap-3">
             <div className='d-flex align-items-center'>
-              <h4 onClick={onBackToVerticals} style={{ cursor: 'pointer' }} className="me-2">
+              <h4 onClick={onBackToVerticals} style={{ cursor: 'pointer' }} className="me-2 mb-0">
                 {selectedVertical?.name || 'Unknown'} Vertical
               </h4>
-              <span className="mx-2"> &gt; </span>
+              <span className="mx-2 my-2"> &gt; </span>
               <h5 className="breadcrumb-item mb-0" style={{ whiteSpace: 'nowrap' }} aria-current="page">
                 Project
               </h5>
