@@ -30,52 +30,6 @@ const AppliedCourses = () => {
     }
   };
 
-  const newLocal = `
-    @media(max-width: 768px) {
-      .appliedCourse-Container {
-        // display: flex;
-        // flex-direction: column;
-      }
-      .appliedCourse-Container .column {
-        width: 100% !important;
-      }
-         .job-single-sec .job-overview ul li{
-    width: 50%!important;
-    padding-left: 35px!important;
-    float: left;
-  }
-   
-    .job-overview ul>li i {
-  position: absolute;
-  top: 5px;
-  font-size: 25px;
-  color: #FC2B5A;
-}
-
-
-.BTnPosition{
-display: flex;
-justify-content: flex-end;
-align-items: flex-end;
-}
-  .uploadeBtn{
-  padding: 0.5rem 1rem;
-  }
-
-    }
-
-    @media(max-width: 425px) {
-      .BTnPosition{
-        display: block;
-      } 
-        .uploadeBtn{
-        white-space: nowrap;
-        margin-top: 5px;
-        margin-left: 23px;
-        }
-        
-    }
-    `;
   return (
     <>
 
@@ -180,7 +134,7 @@ align-items: flex-end;
                       </div>
                       <div className="col-lg-4 col-md-5 column mt-xl-1 mt-lg-1 mt-md-1 mt-sm-3 mt-0 BTnPosition">
                         <div className="extra-job-info mt-1">
-                          <span className="px-0">
+                          <span className="px-0 uploadeBtn "style={{ marginBottom: '10px' }}>
                             <i className="la la-map"></i>
                             <strong>Last Date</strong>{" "}
                             {moment(course?.lastDateForApply || course?.createdAt)
@@ -188,7 +142,7 @@ align-items: flex-end;
                               .format("DD MMM YYYY")}
                           </span>
                         </div>
-                        <div className="add--documents mt-1 ">
+                        <div className="add--documents mt-1">
                           <Link
                             to={`/candidate/reqDocs/${course?._id}`}
                             className="btn btn-success text-white waves-effect waves-light uploadeBtn"
@@ -339,7 +293,67 @@ align-items: flex-end;
       </style>
       <style>
   {
-    newLocal
+    `
+    @media(max-width: 768px) {
+      .appliedCourse-Container {
+        // display: flex;
+        // flex-direction: column;
+      }
+      .appliedCourse-Container .column {
+        width: 100% !important;
+      }
+         .job-single-sec .job-overview ul li{
+    width: 50%!important;
+    padding-left: 35px!important;
+    float: left;
+  }
+   
+    .job-overview ul>li i {
+  position: absolute;
+  top: 5px;
+  font-size: 25px;
+  color: #FC2B5A;
+}
+    }
+    `
+  }
+</style>
+
+<style>
+  {
+    `
+    @media(max-width:768px){
+
+  .job-single-sec .job-overview ul li{
+    width: 50%!important;
+}
+
+    .BTnPosition{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+  .uploadeBtn{
+  padding: 0.5rem 1rem;
+}
+
+}
+  
+
+    @media(max-width: 425px) {
+      .BTnPosition{
+        display: block;
+      } 
+        .uploadeBtn{
+        white-space: nowrap;
+        // margin-top: 5px;
+        margin-left: 23px;
+        }
+        
+    }
+
+    `
   }
 </style>
     </>
