@@ -1498,6 +1498,12 @@ function CollegeLayout({ children }) {
   font-size: 0.9rem;
 }
         
+
+@media (max-width :768px){
+html body .content .content-wrapper{
+padding: 1.8rem 1.2rem 0
+}
+}
         `}
       </style>
 

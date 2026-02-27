@@ -330,7 +330,7 @@ const CandidateManagementPortal = () => {
         </ul>
         <input
           type="text"
-          className="form-control w-25"
+          className="form-control w-25 "
           placeholder="Search verticals..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}

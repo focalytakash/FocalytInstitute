@@ -1746,11 +1746,11 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
     <div className="container py-4">
       <div className="row">
         <div className={mainContentClass}>
-          <div className="d-flex justify-content-between align-items-center mb-3">
+          <div className="d-flex justify-content-between align-items-center mb-3 allCenter">
             <div>
               <div className="d-flex align-items-center gap-3">
 
-                <ol className="breadcrumb border-0 mb-0 small">
+                <ol className="breadcrumb border-0 mb-0 ">
                   {onBackToVerticals && selectedVertical && (
                     <li className="breadcrumb-item">
                       <button
@@ -1805,7 +1805,7 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
 
             <div>
               {onBackToCourses && (
-                <button className="btn btn-outline-secondary me-2" onClick={onBackToCourses}>
+                <button className="btn btn-outline-secondary me-2 " onClick={onBackToCourses}>
                   <i className="bi bi-arrow-left"></i> Back
                 </button>
               )}
@@ -1834,13 +1834,13 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
             </ul>
 
             {/* Sub Tabs and Search */}
-            <div className='d-flex justify-content-between mb-3'>
-              <ul className="nav nav-pills">
+            <div className='d-flex justify-content-between mb-3 allCenter'>
+              <ul className="nav nav-pills allCenterBtn mb-3">
                 {mainTab === 'Batches'
                   ? ['Active Batches', 'Inactive Batches', 'All Batches'].map(tab => (
                     <li className="nav-item" key={tab}>
                       <button
-                        className={`nav-link ${batchSubTab === tab ? 'active' : ''}`}
+                        className={`nav-link navBTn   ${batchSubTab === tab ? 'active' : ''}`}
                         onClick={() => setBatchSubTab(tab)}
                       >
                         {tab}
@@ -7185,7 +7185,33 @@ height:100%;
     `
             }
           </style>
+<style>
+{`
+/* ================= 992px ================= */
+@media (max-width: 992px) {
+  .allCenter {
+    display: block !important;
+  }
+}
 
+/* ================= 768px ================= */
+@media (max-width: 768px) {
+
+  .allCenterBtn {
+    margin-bottom: 10px !important;
+  }
+
+  .navBTn {
+    padding: 4px;
+    width: 80px;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+`}
+</style>
         </div>
         {!isMobile && (
           <div className="col-4" >
