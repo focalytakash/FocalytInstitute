@@ -1990,17 +1990,22 @@ const B2BSales = () => {
                 <div className="mb-3">
                   <h6 className="text-dark mb-2">Follow-up Details</h6>
                   <div className="row">
-                    <div className="col-6">
+                    <div className="col-6 ps-3">
                       <label htmlFor="nextActionDate" className="form-label small fw-medium text-dark">
                         Next Action Date <span className="text-danger">*</span>
                       </label>
                       <DatePicker
-                        className="form-control border-0 bgcolor"
-                        onChange={(date) => setFollowupFormData(prev => ({ ...prev, followupDate: date }))}
-                        value={followupFormData.followupDate}
-                        format="dd/MM/yyyy"
-                        minDate={today}
-                      />
+                          className="form-control border-0 bgcolor small-date"
+                          onChange={(date) =>
+                            setFollowupFormData(prev => ({
+                              ...prev,
+                              followupDate: date
+                            }))
+                          }
+                          value={followupFormData.followupDate}
+                          format="dd/MM/yyyy"
+                          minDate={today}
+                        />
                     </div>
                     <div className="col-6">
                       <label htmlFor="actionTime" className="form-label small fw-medium text-dark">
@@ -2667,7 +2672,7 @@ const B2BSales = () => {
                                   applyFilters();
                                 }}
                                 style={{
-                                  right: '2px',
+                                  right: '4px',
                                   top: '50%',
                                   transform: 'translateY(-50%)',
                                   padding: '2px 6px',
@@ -2912,7 +2917,7 @@ const B2BSales = () => {
                       )}
                       <div className="col-12 mt-2">
                         <div className="d-flex align-items-center gap-2">
-                          <div className="position-relative flex-grow-1">
+                          <div className="position-relative flex-grow-1 d-flex">
                             <input
                               type="text"
                               className="form-control"
@@ -2940,27 +2945,11 @@ const B2BSales = () => {
                             {filters.search && (
                               <button
                                 type="button"
-                                className="btn btn-sm position-absolute"
+                                className="btn btn-sm position-absolute SerachClear"
                                 onClick={() => {
                                   handleFilterChange('search', '');
                                   applyFilters();
-                                }}
-                                style={{
-                                  right: '4px',
-                                  top: '50%',
-                                  transform: 'translateY(-50%)',
-                                  padding: '4px 8px',
-                                  backgroundColor: '#dc3545',
-                                  border: 'none',
-                                  color: 'white',
-                                  borderRadius: '50%',
-                                  width: '24px',
-                                  height: '24px',
-                                  display: 'flex',
-                                  alignItems: 'center',
-                                  justifyContent: 'center',
-                                  boxShadow: '0 2px 4px rgba(220, 53, 69, 0.3)'
-                                }}
+                                }}                                
                               >
                                 <i className="fas fa-times" style={{ fontSize: '10px' }}></i>
                               </button>
@@ -3158,7 +3147,7 @@ const B2BSales = () => {
                               {lead.email && (
                                 <div className="lead-contact-item">
                                   <i className="fas fa-envelope"></i>
-                                  <span>{lead.email}</span>
+                                  <span style={{fontSize:"15px"}}>{lead.email}</span>
                                 </div>
                               )}
                               {lead.designation && (
@@ -4197,7 +4186,7 @@ Tech Solutions,Raj Kumar,9876543212,raj@tech.com,Corporate,Partner,789 Tech Park
     gap: 0.25rem;
     font-size: 0.7rem;
     opacity: 0.9;
-    max-width: 200px;
+    max-width: 262px;
   }
 
   .lead-contact-item i {
@@ -4210,6 +4199,7 @@ Tech Solutions,Raj Kumar,9876543212,raj@tech.com,Corporate,Partner,789 Tech Park
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size:14px
   }
 
   /* Compact Additional Info Section */
@@ -4711,16 +4701,111 @@ Tech Solutions,Raj Kumar,9876543212,raj@tech.com,Corporate,Partner,789 Tech Park
 
 
 <style>
-  {
-    `
-    .LeadButtons{
-    white-space: nowrap;
-    overflow-x: auto;
-    width: 100%;
+{`
+@media (max-width:992px){
+.react-calendar {
+  transform: translateY(-200px) !important;
+}
+}
+/* ===== Small Date Input ===== */
+.small-date {
+  font-size: 14px;
+  height: 32px;
+  padding: 4px 8px;
+  white-space: nowrap;
 }
 
-    `
+/* ===== React Date Picker (react-date-picker) ===== */
+.react-date-picker {
+  height: 32px;
+  box-sizing:content-box;
+}
+
+.react-date-picker__wrapper {
+  height: 100%;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+}
+
+.react-date-picker__inputGroup {
+  height: 100%;
+  font-size: 15px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.react-date-picker__button {
+  padding: 0;
+  margin: 0;
+}
+
+.react-date-picker__calendar-button {
+  padding: 0 4px;
+}
+
+/* Hide clear button if needed */
+/* .react-date-picker__clear-button {
+  display: none;
+} */
+
+/* ===== React Datepicker (react-datepicker) ===== */
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  width: 100%;
+}
+  .react-date-picker__inputGroup {
+  min-width: unset !important;   /* removes calc width */
+  flex-grow: 1;
+  padding: 0 2px;
+  box-sizing: border-box;
+}
+  
+
+/* ===== Lead Buttons ===== */
+.LeadButtons {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.SerachClear {
+  position: absolute;   /* IMPORTANT */
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px;
+  background-color: #dc3545;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+  cursor: pointer;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .SerachClear {
+            width: 22px !important;
+        height: 22px !important;
+        right: 10px !important;
+        top: 15px !important;
   }
+}
+}
+`}
 </style>
     </div >
   );

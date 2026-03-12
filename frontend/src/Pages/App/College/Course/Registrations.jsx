@@ -6132,7 +6132,7 @@ const CRMDashboard = () => {
   // Render Edit Panel (Desktop Sidebar or Mobile Modal)
   const renderEditPanel = () => {
     const panelContent = (
-      <div className="card border-0 shadow-sm">
+      <div className="card border-0 shadow-sm ">
         <div className="card-header bg-white d-flex justify-content-between align-items-center py-3 border-bottom">
           <div className="d-flex align-items-center">
             <div className="me-2">
@@ -8777,7 +8777,7 @@ const CRMDashboard = () => {
                   </div>
 
                   {/* Modal Body - Scrollable content */}
-                  <div className="modal-body p-4">
+                  <div className="modal-body ">
                     <div className="row g-4">
                       {/* Course Type Filter */}
                       <div className="col-md-3">
@@ -9064,7 +9064,7 @@ const CRMDashboard = () => {
                         </label>
                         <div className="card border-0 bg-light p-1">
                           <div className="row g-2">
-                            <div className="col-12 col-sm-12  col-md-6 col-lg-6 fixDate">
+                            <div className="col-12 col-sm-12  col-md-6 col-lg-6 fixDate translateX">
                               <label className="form-label small">From Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'nextActionFromDate')}
@@ -11453,8 +11453,9 @@ const CRMDashboard = () => {
 
 
       <style>
-        {`
-        /* Existing styles */
+      {
+      `
+      /* Existing styles */
         html body .content .content-wrapper {
           padding: calc(0.9rem - 0.1rem) 1.2rem
         }
@@ -11492,8 +11493,6 @@ const CRMDashboard = () => {
         .card {
           transition: box-shadow 0.15s ease-in-out;
         }
-
-
         .text-truncate {
           overflow: hidden;
           text-overflow: ellipsis;
@@ -11532,8 +11531,7 @@ const CRMDashboard = () => {
           font-size: 10px;
           color: #333;
         }
-
-        .contact-row {
+.contact-row {
           border: 1px solid #e0e0e0;
           border-radius: 2px;
           padding: 10px 15px;
@@ -11621,8 +11619,7 @@ const CRMDashboard = () => {
           padding: 20px;
           margin-bottom: 20px;
         }
-
-        .section-title {
+      .section-title {
           color: #495057;
           font-weight: 600;
           margin-bottom: 15px;
@@ -11728,7 +11725,6 @@ const CRMDashboard = () => {
             background: #888;
             border-radius: 10px;
           }
-
           // .btn-group {
           //   flex-wrap: wrap;
           // }
@@ -11824,28 +11820,27 @@ const CRMDashboard = () => {
             transform: translateX(0);
           }
         }
-        
         /* Generic mobile panel styles - apply to all col-4 panels on mobile */
-        @media (max-width: 992px) {
-          /* Make all col-4 columns (side panels) fullscreen on mobile */
-          .row > .col-4,
-          .row > .col-lg-4,
-          .row > .col-md-4,
-          [class*="col-4"] {
-            // position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            // width: 100vw !important;
-            // max-width: 100vw !important;
-            // height: 100vh !important;
-            // z-index: 9999 !important;
-            background: white !important;
-            animation: slideInRight 0.3s ease !important;
-            padding: 0 !important;
-            overflow-y: auto !important;
-          }
+        // @media (max-width: 992px) {
+        //   /* Make all col-4 columns (side panels) fullscreen on mobile */
+        //   .row > .col-4,
+        //   .row > .col-lg-4,
+        //   .row > .col-md-4,
+        //   [class*="col-4"] {
+        //     // position: fixed !important;
+        //     top: 0 !important;
+        //     left: 0 !important;
+        //     right: 0 !important;
+        //     bottom: 0 !important;
+        //     // width: 100vw !important;
+        //     // max-width: 100vw !important;
+        //     // height: 100vh !important;
+        //     // z-index: 9999 !important;
+        //     background: white !important;
+        //     animation: slideInRight 0.3s ease !important;
+        //     padding: 0 !important;
+        //     overflow-y: auto !important;
+        //   }
           
           /* Prevent body scroll when panel is open */
           body.panel-open {
@@ -14739,7 +14734,10 @@ margin-left:5px;
     inset: 0 !important;
     width: 300px !important;
     }
-        `}
+
+        
+      `
+      }
       </style>
       <style>
         {`
@@ -17385,9 +17383,12 @@ margin-left:5px;
           }
 
           /* Responsive Design */
-
+          .react-date-picker__calendar{
+          position:static!important;
+          margin-bottom:10px
+          }
           .react-date-picker__calendar.react-date-picker__calendar--open {
-              inset: 0 !important;
+              // inset: 0 !important;
               width: 300px !important;
           }
 
@@ -19293,6 +19294,11 @@ padding:12px;
     transform: translateX(-110px)!important;
 
 }
+   @media(max-width:992px){
+   .react-calendar{
+       transform: translateY(-200px) !important;
+   }
+   }
 `}
 </style>
 

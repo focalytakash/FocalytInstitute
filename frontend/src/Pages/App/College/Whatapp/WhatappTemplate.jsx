@@ -3113,6 +3113,8 @@ const WhatsAppTemplate = () => {
 
               onClick={() => setShowCreateModal(true)}
 
+              title="Create WhatsApp Template"
+
             >
 
               <span style={{ color: '#28a745' }}>📝</span>

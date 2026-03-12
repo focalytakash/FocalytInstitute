@@ -257,7 +257,7 @@ const ViewCourses = () => {
                               </Form.Control>
                             </Form.Group>
                           </Col>
-                          <Col xl={3} className="text-center mt-1" style={{ marginTop: '2.5rem !important' }}>
+                          <Col xl={3} className="text-center mt-3" style={{ marginTop: '2.5rem !important' }}>
                             <Button
                               variant="success"
                               type="submit"
@@ -267,7 +267,7 @@ const ViewCourses = () => {
                             </Button>
                             <Button
                               variant="danger"
-                              className="d-inline waves-effect waves-light mb-2 text-white mx-1"
+                              className="d-inline waves-effect waves-light text-white mx-1"
                               onClick={handleResetFilters}
                             >
                               RESET

@@ -1825,6 +1825,7 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
                 <li className="nav-item" key={tab}>
                   <button
                     className={`nav-link ${mainTab === tab ? 'active' : ''}`}
+                    title={tab}
                     onClick={() => setMainTab(tab)}
                   >
                     {tab}
@@ -1841,6 +1842,7 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
                     <li className="nav-item" key={tab}>
                       <button
                         className={`nav-link navBTn   ${batchSubTab === tab ? 'active' : ''}`}
+                        title={tab}
                         onClick={() => setBatchSubTab(tab)}
                       >
                         {tab}
@@ -1850,7 +1852,8 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
                   : ['Batch Assigned', 'Pending for Batch Assigned', 'All List'].map(tab => (
                     <li className="nav-item" key={tab}>
                       <button
-                        className={`nav-link ${admissionSubTab === tab ? 'active' : ''}`}
+                        className={`nav-link navBTn ${admissionSubTab === tab ? 'active' : ''}`}
+                        title={tab}
                         onClick={() => setAdmissionSubTab(tab)}
                       >
                         {tab}
@@ -2054,11 +2057,11 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
                                   <div className="card-body px-1 py-0 my-2">
                                     <div className="row align-items-center justify-content-between">
                                       <div className="col-md-6">
-                                        <div className="d-flex align-items-center">
-                                          <div className="form-check me-3">
+                                        <div className="d-flex align-items-center mb-3">
+                                          <div className="form-check me-2">
                                             <input className="form-check-input" type="checkbox" />
                                           </div>
-                                          <div className="me-3">
+                                          <div className="me-2">
                                             <div className="circular-progress-container" data-percent={profile.docCounts.totalRequired > 0 ? profile.docCounts.uploadPercentage : 'NA'}>
                                               <svg width="40" height="40">
                                                 <circle className="circle-bg" cx="20" cy="20" r="16"></circle>
@@ -2079,7 +2082,8 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
                                             </div>
                                             <small className="text-muted">{profile._candidate?.mobile || 'Mobile Number'}</small>
                                           </div>
-                                          <div style={{ marginLeft: '15px' }}>
+                                          <div style={{ marginLeft: 'clamp(15px,2vw,36px'}}
+                                          className='iconPosition'>
                                             <button className="btn btn-outline-primary btn-sm border-0" title="Call" style={{ fontSize: '20px' }}>
                                               <i className="fas fa-phone"></i>
                                             </button>
@@ -2092,7 +2096,8 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
                                               <i className="fab fa-whatsapp"></i>
                                             </button>
                                           </div>
-                                          <div style={{
+                                          <div className=" text-start d-md-block d-sm-none d-none"
+                                           style={{
                                             marginLeft: '15px',
                                             backgroundColor: `${(profile?.batch?.name || profile?.isBatchAssigned) ? 'green' : 'red'}`,
                                             margin: '0px 10px',
@@ -2109,8 +2114,20 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
 
 
 
-                                      <div className="col-md-1 text-end d-md-none d-sm-block d-block">
-                                        <div className="btn-group">
+                                      <div className="col-md-1 text-start d-md-none d-sm-flex d-flex justify-content-between">
+                                        <div style={{
+                                            marginLeft: '15px',
+                                            backgroundColor: `${(profile?.batch?.name || profile?.isBatchAssigned) ? 'green' : 'red'}`,
+                                            margin: '0px 10px',
+                                            padding: '15px 10px',
+                                            borderRadius: '10px',
+                                            color: 'white'
+                                          }}>
+                                            <h6>
+                                              {profile?.batch?.name || (profile?.isBatchAssigned ? 'Batch Assigned' : 'Batch Assignment Pending')}
+                                            </h6>
+                                          </div>
+                                        <div className="d-flex">
 
                                           <div style={{ position: "relative", display: "inline-block" }}>
                                             <button
@@ -2224,7 +2241,7 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
 
                                           <button
                                             className="btn btn-sm btn-outline-secondary border-0"
-                                            onClick={() => setLeadDetailsVisible(profileIndex)}
+                                            onClick={() => toggleLeadDetails(profileIndex)}
                                           >
                                             {leadDetailsVisible === profileIndex ? (
                                               <i className="fas fa-chevron-up"></i>
@@ -2346,9 +2363,9 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
                                 {/* Tab Navigation and Content Card */}
                                 <div className="card border-0 shadow-sm mb-4">
                                   <div className="card-header bg-white border-bottom-0 py-3 mb-3">
-                                    <ul className="nav nav-pills nav-pills-sm">
+                                    <ul className="d-flex nav-pills-sm nav-scroll CardBtn">
                                       {tabs.map((tab, tabIndex) => (
-                                        <li className="nav-item" key={tabIndex}>
+                                        <li className="nav-item CardDetailBtn" key={tabIndex} >
                                           <button
                                             className={`nav-link ${(activeTab[profileIndex] || 0) === tabIndex ? 'active' : ''}`}
                                             onClick={() => handleTabClick(profileIndex, tabIndex)}
@@ -3164,6 +3181,7 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
                                                         return (
                                                           <>
                                                             <button
+                                                            style={{whiteSpace:"nowrap" , marginBottom:"10px"}}
                                                               className={`filter-btn ${statusFilter === 'all' ? 'active' : ''}`}
                                                               onClick={() => setStatusFilter('all')}
                                                             >
@@ -3172,6 +3190,7 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
                                                               <span className="badge">{backendCounts.totalRequired || 0}</span>
                                                             </button>
                                                             <button
+                                                            style={{whiteSpace:"nowrap" , marginBottom:"10px"}}
                                                               className={`filter-btn pending ${statusFilter === 'pending' ? 'active' : ''}`}
                                                               onClick={() => setStatusFilter('pending')}
                                                             >
@@ -3180,6 +3199,7 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
                                                               <span className="badge">{backendCounts.pendingVerificationCount || 0}</span>
                                                             </button>
                                                             <button
+                                                            style={{whiteSpace:"nowrap" , marginBottom:"10px"}}
                                                               className={`filter-btn verified ${statusFilter === 'verified' ? 'active' : ''}`}
                                                               onClick={() => setStatusFilter('verified')}
                                                             >
@@ -3188,6 +3208,7 @@ const Batch = ({ selectedCourse = null, onBackToCourses = null, selectedCenter =
                                                               <span className="badge">{backendCounts.verifiedCount || 0}</span>
                                                             </button>
                                                             <button
+                                                            style={{whiteSpace:"nowrap" , marginBottom:"10px"}}
                                                               className={`filter-btn rejected ${statusFilter === 'rejected' ? 'active' : ''}`}
                                                               onClick={() => setStatusFilter('rejected')}
                                                             >
@@ -5869,23 +5890,30 @@ width:100%;
 }
 
 .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    gap: .5rem;
     margin-bottom: 2rem;
+
+    overflow-x: auto;              /* Enable horizontal scroll */
+    overflow-y: hidden;
+    flex-wrap: nowrap;             /* Keep cards in one line */
+    // -webkit-overflow-scrolling: touch;  /* Smooth mobile scroll */
 }
+
 
 .stat-card {
     background: white;
     border-radius: 15px;
-    padding: 1.5rem;
+    padding: clamp(0.5rem, 2.5vw, 1.5rem);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 5px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    flex: 0 0 auto;      /* 🔥 Prevent shrinking */
+    margin-bottom:10px
 }
 
 .stat-card::before {
@@ -5990,14 +6018,16 @@ width:100%;
 .filter-tabs {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    overflow: hidden;
+    overflow-x: auto;
 }
 
 .filter-btn {
     background: #f8f9fa;
     border: 2px solid transparent;
     border-radius: 25px;
-    padding: 0.75rem 1.5rem;
+    padding: 2px 4px;
     color: #666;
     font-weight: 600;
     cursor: pointer;
@@ -6291,9 +6321,9 @@ width:100%;
         grid-template-columns: 1fr;
     }
 
-    .filter-tabs {
-        justify-content: center;
-    }
+    // .filter-tabs {
+    //     justify-content: center;
+    // }
 
     .document-header {
         flex-direction: column;
@@ -7187,6 +7217,23 @@ height:100%;
           </style>
 <style>
 {`
+
+    .CardDetailBtn .nav-link {
+  margin: 0px 4px 10px;
+  border-bottom: 1px solid #d0cece;
+  border-radius: 8px;
+  white-space: nowrap;
+  background-color: transparent;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.CardDetailBtn .nav-link.active {
+  background-color: #fc2b5a;
+  color: white;
+  border-bottom: none;
+}
+
 /* ================= 992px ================= */
 @media (max-width: 992px) {
   .allCenter {
@@ -7203,15 +7250,25 @@ height:100%;
 
   .navBTn {
     padding: 4px;
-    width: 80px;
+    width: clamp(85px, 25vw, 136px);
     font-size: 14px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
   }
+    .iconPosition{
+    margin-bottom:15px !important;
+    }
+    .CardBtn{
+    overflow: hidden !important;
+    display: flex !important;
+    overflow-x: auto !important;
+    }
+   
 }
 `}
 </style>
+
         </div>
         {!isMobile && (
           <div className="col-4" >

@@ -367,6 +367,7 @@ const CandidateManagementPortal = () => {
               <button
               style={{fontSize: "clamp(12px, 1.8vw, 15px)"}}
                 className={`nav-link navBTn ${activeVerticalTab === tab ? 'active' : ''}`}
+                title={tab}
                 onClick={() => setActiveVerticalTab(tab)}
               >
                 {tab}

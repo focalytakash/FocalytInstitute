@@ -3589,7 +3589,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                         </label>
                         <div className="card border-0 bg-light p-1">
                           <div className="row g-2">
-                            <div className="col-lg-6 col-md-12 col-12 firstDatepicker">
+                            <div className="col-lg-6 col-md-12 col-12 firstDatepicker fixDate">
                               <label className="form-label small">From Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'createdFromDate')}
@@ -3601,7 +3601,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                                 maxDate={filterData.createdToDate || new Date()}
                               />
                             </div>
-                            <div className="col-lg-6 col-md-12 col-12">
+                            <div className="col-lg-6 col-md-12 col-12 fixDate">
                               <label className="form-label small">To Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'createdToDate')}
@@ -3651,7 +3651,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                         </label>
                         <div className="card border-0 bg-light p-1">
                           <div className="row g-2">
-                            <div className="col-lg-6 col-md-12 col-12">
+                            <div className="col-lg-6 col-md-12 col-12 fixDate">
                               <label className="form-label small">From Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'modifiedFromDate')}
@@ -3663,7 +3663,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                                 maxDate={filterData.modifiedToDate || new Date()}
                               />
                             </div>
-                            <div className="col-lg-6 col-md-12 col-12">
+                            <div className="col-lg-6 col-md-12 col-12 fixDate">
                               <label className="form-label small">To Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'modifiedToDate')}
@@ -3713,7 +3713,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                         </label>
                         <div className="card border-0 bg-light p-0">
                           <div className="row g-2">
-                            <div className="col-lg-6 col-md-12 col-12 lastDatepicker">
+                            <div className="col-lg-6 col-md-12 col-12 lastDatepicker fixDate">
                               <label className="form-label small">From Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'nextActionFromDate')}
@@ -3725,7 +3725,7 @@ const KYCManagement = ({ openPanel = null, closePanel = null, isPanelOpen = null
                                 maxDate={filterData.nextActionToDate}
                               />
                             </div>
-                            <div className="col-lg-6 col-md-12 col-12  lastDatepicker">
+                            <div className="col-lg-6 col-md-12 col-12  lastDatepicker fixDate">
                               <label className="form-label small">To Date</label>
                               <DatePicker
                                 onChange={(date) => handleDateFilterChange(date, 'nextActionToDate')}
@@ -11082,12 +11082,24 @@ max-width: 600px;
          display: block !important; 
     }
          .CourseType{
-        font-size: 13px;
+        font-size: 12px !important;
         text-wrap: auto;
         white-space: nowrap;
         margin-bottom:8px;
 }
 }
+ .CourseType{
+        font-size: 12px !important;
+        text-wrap: auto;
+        white-space: nowrap;
+        margin-bottom:4px;
+}
+ .fixDate {
+    box-sizing: border-box;
+    font-size: 13px;
+    // white-space: nowrap;
+    width: 100%;
+  }
           `
         }
       </style>

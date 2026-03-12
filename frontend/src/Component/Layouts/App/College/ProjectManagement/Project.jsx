@@ -579,6 +579,7 @@ const Project = ({ selectedVertical = null, onBackToVerticals = null }) => {
               <button
               style={{fontSize: "clamp(12px, 1.8vw, 15px)"}}
                 className={`nav-link navBTn  ${activeProjectTab === tab ? 'active' : ''}`}
+                title={tab}
                 onClick={() => setActiveProjectTab(tab)}
               >
                 {tab}

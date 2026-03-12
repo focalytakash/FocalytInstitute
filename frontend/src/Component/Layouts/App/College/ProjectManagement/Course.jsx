@@ -652,7 +652,9 @@ const Course = ({ selectedCenter = null, onBackToCenters = null, selectedProject
                  overflow: "hidden",
                  maxWidth :"110px",
                  fontSize: "clamp(12px ,2vw,1rem)"
-                          }} onClick={onBackToProjects} className="breadcrumb-item mb-0 navBTn" aria-current="page">
+                          }} onClick={onBackToProjects} className="breadcrumb-item mb-0 navBTn"
+                          title={`${selectedProject.name} Project`}
+                          aria-current="page">
                 {selectedProject.name} Project
               </h5>
               <span className="mx-1 mb-1"> &gt; </span>
@@ -663,11 +665,13 @@ const Course = ({ selectedCenter = null, onBackToCenters = null, selectedProject
                  overflow: "hidden",
                  maxWidth :"110px",
                  fontSize: "clamp(12px ,2vw,1rem)"
-                           }} onClick={onBackToCenters} className="breadcrumb-item mb-0 navBTn" aria-current="page">
+                           }} onClick={onBackToCenters} className="breadcrumb-item mb-0 navBTn"
+                           title={`${selectedCenter.name} Centers`} aria-current="page">
                 {selectedCenter.name} Centers
               </h5>
               <span className="mx-1 mb-1"> &gt; </span>
               <h5 className="breadcrumb-item mb-0 navBTn" aria-current="page" 
+              title='All Courses'
                                   style={{  cursor:"pointer",                      
                  whiteSpace: "nowrap",
                  marginBottom: "0px",
@@ -714,6 +718,7 @@ const Course = ({ selectedCenter = null, onBackToCenters = null, selectedProject
               <button
                 style={{fontSize:"clamp(12px, 1.8vw, 15px)"}}
                 className={`nav-link navBTn  ${activeCourseTab === tab ? 'active' : ''}`}
+                title={tab}
                 onClick={() => setActiveCourseTab(tab)}
               >
                 {tab}

@@ -593,6 +593,7 @@ const updatedPermission = async () => {
                             </h5>
                             <span className="mx-2"> &gt; </span>
                             <h5 className="breadcrumb-item mb-0" aria-current="page"
+                            title='Center'
                                             style={{ cursor: "pointer",
                                             whiteSpace: "nowrap",
                                             maxWidth :"110px",
@@ -655,6 +656,7 @@ const updatedPermission = async () => {
                             <button
                             style={{fontSize:"clamp(12px, 1.8vw, 15px)"}}
                                 className={`nav-link navBTn ${activeCenterTab === tab ? 'active' : ''}`}
+                                title={tab}
                                 onClick={() => setActiveCenterTab(tab)}
                             >
                                 {tab}

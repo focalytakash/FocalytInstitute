@@ -15384,10 +15384,10 @@ margin-left:15px;
 //     width: 250px !important;
 // }
 
-// .react-calendar{
-//     height: min-content !important;
-//     // transform: translateX(-110px) !important;
-//     width: 250px !important;
+.react-calendar{
+    height: min-content !important;
+    // transform: translateX(-110px) !important;
+    width: 250px !important;
 
 // }
 @media (max-width: 768px) {

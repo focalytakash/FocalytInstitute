@@ -3867,12 +3867,12 @@ const LeadAnalyticsDashboard = () => {
                   </div>
 
                   {/* Single Date Range Filter */}
-                  <div className="col-md-6">
+                  <div className="col-md-6 DateDiv">
                     <label className="form-label small fw-bold text-dark">
                       <i className="fas fa-calendar-plus me-1 text-success"></i>
                       Date Range
                     </label>
-                    <div className="card border-0 bg-light p-3">
+                    <div className="card border-0 bg-light p-3 ">
                       <div className="row g-2">
                         <div className="col-6 fromDate">
                           <label className="form-label small">From Date</label>
@@ -4498,13 +4498,15 @@ html body .content .content-wrapper {
 padding-right:10px
 }
    
-
+@media (max-width: 991px) {
+.DateDiv{
+width:80%;
+}
+}
         `
-      }
-
-
-      </style>
-    </div>
+ }
+  </style>
+</div>
 
 
   );
